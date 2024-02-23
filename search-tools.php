@@ -8,7 +8,7 @@
 * Author URI: https://www.toptal.com/resume/peter-stehlik
 * Text Domain: search-tools
 * License: GPLv2 or later
-* License URI: http://www.gnu.org/licenses/gpl-2.0.html
+* License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 * Domain Path: /languages
 * Requires PHP: 7.3
 * Requires at least: 6.2
