@@ -1,0 +1,99 @@
+<?php
+
+namespace SearchTools;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+class Activate
+{
+    /**
+	 * Static property to hold our singleton instance
+     * 
+     * @since   1.0.0
+     * 
+     * @var object
+	 *
+	 */
+    private static $instance = null;
+
+    /**
+	 * Constructor
+	 *
+     * @since   1.0.0
+     * 
+	 * @return void
+	 */
+	private function __construct() {
+		$this->save_plugin_data();
+		$this->create_db_tables();
+	}
+
+    /**
+	 * If an instance exists, this returns it.  If not, it creates one and
+	 * returns it.
+	 *
+     * @since   1.0.0
+     * 
+	 * @return Activate
+	 */
+	public static function init() {
+
+		if ( !self::$instance ){
+			self::$instance = new self;
+        }
+
+		return self::$instance;
+
+	}
+
+    /**
+     * Create DB table on plugin activation
+     *
+     * @since   1.0.0
+     *
+     * @return  void
+     */
+    private function create_db_tables()
+    {
+        global $wpdb;
+        
+        $charset_collate = $wpdb->get_charset_collate();
+        
+        $table_queries = SEARCH_TOOLS_DB_TABLE;
+        
+        $sql_create_table_queries = "CREATE TABLE IF NOT EXISTS $table_queries (
+            id mediumint(9) NOT NULL AUTO_INCREMENT,
+            query varchar(55) DEFAULT '' NOT NULL,
+            user_roles varchar(150) DEFAULT '' NOT NULL,
+            count_total_results mediumint(9) NOT NULL,
+            ids_first_top_results text DEFAULT '' NULL,
+            created_at datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+            PRIMARY KEY  (id)
+        ) $charset_collate;";
+
+        require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+
+        dbDelta( $sql_create_table_queries );
+
+    }
+
+    /**
+     * Store information, e.g. 'date of activation'
+     *
+     * @since   1.0.0
+     *
+     * @return  void
+     */
+    private function save_plugin_data()
+    {
+        global $st_db_version;
+        $st_db_version = '1.0';
+
+        add_option( 'st_db_version', $st_db_version, '', false );
+
+        add_option('search_tools_plugin_activation_date', current_time('mysql', false), '', false);
+    }
+
+}
