@@ -480,7 +480,7 @@ class Insights
 		}
 
 		$html = "
-			<h3 class='st-insights-heading'>" . __($label, 'search-tools') . ":</h3>
+			<h3 class='st-insights-heading'>$label:</h3>
 
 			<table class='st-table st-insights-table'>
 				<thead>
@@ -514,11 +514,11 @@ class Insights
      */
 	private function html_builder($data)
 	{
-		$today_html = $this->html_helper($data["today"], "Today");
-		$last_7_days_html = $this->html_helper($data["last_7_days"], "Last 7 days");
-		$last_30_days_html = $this->html_helper($data["last_30_days"], "Last 30 days");
-		$this_year_html = $this->html_helper($data["this_year"], "This year");
-		$overal_html = $this->html_helper($data["overall"], "Overall");
+		$today_html = $this->html_helper($data["today"], __("Today", "search-tools"));
+		$last_7_days_html = $this->html_helper($data["last_7_days"], __("Last 7 days", "search-tools"));
+		$last_30_days_html = $this->html_helper($data["last_30_days"], __("Last 30 days", "search-tools"));
+		$this_year_html = $this->html_helper($data["this_year"], __("This year", "search-tools"));
+		$overal_html = $this->html_helper($data["overall"], __("Overall", "search-tools"));
 
 		if( file_exists( SEARCH_TOOLS_PLUGIN_DIR_PATH . "/templates/tools-statistics.php" ) ){
 			require_once( SEARCH_TOOLS_PLUGIN_DIR_PATH . "/templates/tools-statistics.php" );
