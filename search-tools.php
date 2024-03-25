@@ -151,7 +151,7 @@ if ( ! class_exists( 'SearchTools' ) ) {
 
 			if( $GLOBALS['hook_suffix'] === "search-tools_page_search-tools-insights" ){
 				wp_enqueue_style("search-tools-insights", SEARCH_TOOLS_ASSETS_URL . "css/tools-insights.css", false, "1.2.0", "all");
-				wp_enqueue_script("search-tools-apexcharts", SEARCH_TOOLS_ASSETS_URL . "external/apexcharts/apexcharts.min.js", [], "1.0", ["in_footer" => true]);
+				wp_enqueue_script("search-tools-apexcharts", SEARCH_TOOLS_ASSETS_URL . "external/apexcharts/apexcharts.js", [], "1.0", ["in_footer" => true]);
 				wp_enqueue_script("search-tools-insights", SEARCH_TOOLS_ASSETS_URL . "js/tools-insights.js", [], "1.1.0", ["defer" => true, "in_footer" => true]);
 			}
 		}
