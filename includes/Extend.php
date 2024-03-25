@@ -130,10 +130,12 @@ class Extend {
 	public function pre_get_posts( $query ) {
 		if ( $this->is_search( $query ) ) {
 
+			$post_type = isset( $_GET['post_type'] ) ? sanitize_text_field($_GET['post_type']) : "";
+
 			// Set post types.
 			if ( ! empty( $this->st_settings['post_types'] ) ) {
-				if ( isset( $_GET['post_type'] ) && in_array( esc_attr( $_GET['post_type'] ), (array) $this->st_settings['post_types'], true ) ) {
-					$query->query_vars['post_type'] = (array) esc_attr( $_GET['post_type'] );
+				if ( $post_type && in_array( $post_type, (array) $this->st_settings['post_types'], true ) ) {
+					$query->query_vars['post_type'] = $post_type;
 				} else {
 					$query->query_vars['post_type'] = (array) $this->st_settings['post_types'];
 				}
@@ -402,7 +404,7 @@ class Extend {
 			'woocommerce_json_search_pages',
 		);
 
-		$current_action = ! empty( $_REQUEST['action'] ) ? $_REQUEST['action'] : false;
+		$current_action = ! empty( $_REQUEST['action'] ) ? sanitize_text_field($_REQUEST['action']) : false;
 
 		foreach ( $preserved_actions as $action ) {
 			if ( strpos( $current_action, $action ) !== false ) {

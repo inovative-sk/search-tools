@@ -84,7 +84,7 @@ class Insights
      */
 	public function search_insights_content() {
 		$default_tab = 'all_users';
-		$tab = isset($_GET['tab']) ? $_GET['tab'] : $default_tab;
+		$tab = isset($_GET['tab']) ? sanitize_text_field( $_GET['tab'] ) : $default_tab;
 
 		global $wpdb;
 						
