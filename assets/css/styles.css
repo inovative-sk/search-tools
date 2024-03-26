@@ -3,13 +3,13 @@
 /* -------- */
 
 :root {
-    --st-primary: #c26148;
-    --st-secondary: #db7358;
-    --st-tertiary: #e7ded0;
-    --st-dark: #000;
-    --st-light: #f4f4f4;
-    --st-black: #000000;
-    --st-white: #ffffff;
+    --seto-primary: #c26148;
+    --seto-secondary: #db7358;
+    --seto-tertiary: #e7ded0;
+    --seto-dark: #000;
+    --seto-light: #f4f4f4;
+    --seto-black: #000000;
+    --seto-white: #ffffff;
 }
 
 
@@ -18,7 +18,7 @@
 /* UTILITIES */
 /* -------- */
 
-.st-text-center {
+.seto-text-center {
     text-align: center !important;
 }
 
@@ -27,63 +27,63 @@
 /* -------- */
 /* BUTTONS */
 /* ------ */
-.st-btn {
+.seto-btn {
     display: inline-flex;
     padding: 5px 10px;
-    border: 1px solid var(--st-dark);
+    border: 1px solid var(--seto-dark);
     margin: 0 5px;
     text-decoration: none;
     letter-spacing: 0.025rem;
-    color: var(--st-primary);
+    color: var(--seto-primary);
     font-size: 14px;
     font-weight: bold;
 }
-.st-btn.st-btn-primary {
-    border-color: var(--st-secondary);
-    background: var(--st-primary);
-    color: var(--st-tertiary);
+.seto-btn.seto-btn-primary {
+    border-color: var(--seto-secondary);
+    background: var(--seto-primary);
+    color: var(--seto-tertiary);
 }
 
 
 /* ------- */
 /* TABLES */
 /* ------*/
-.st-table {
+.seto-table {
     width: 100%;
     border-collapse: collapse;
 }
-.st-table th {
+.seto-table th {
     padding: 4px 0;
     text-align: left;
-    color: var(--st-dark);
+    color: var(--seto-dark);
     font-weight: 400;
 }
-.st-table td {
+.seto-table td {
     padding: 4px 0;
 }
-.st-table thead tr {
-    background: var(--st-tertiary);
+.seto-table thead tr {
+    background: var(--seto-tertiary);
 }
-.st-table tr:nth-child(even){
-    background: var(--st-light);
+.seto-table tr:nth-child(even){
+    background: var(--seto-light);
 }
-.st-table th:first-child,
-.st-table td:first-child {
+.seto-table th:first-child,
+.seto-table td:first-child {
     width: 40px;
 }
-.st-table th:last-child,
-.st-table td:last-child,
-.st-searches-cell {
+.seto-table th:last-child,
+.seto-table td:last-child,
+.seto-searches-cell {
     width: 100px;
 }
 
 /* ------------------- */
 /* NO RESULTS MESSAGE */
 /* ----------------- */
-.st-no-results {
+.seto-no-results {
     margin: 24px 0;
     padding: 24px;
-    border: 1px solid var(--st-secondary);
-    background: var(--st-tertiary);
-    color: var(--st-secondary);
+    border: 1px solid var(--seto-secondary);
+    background: var(--seto-tertiary);
+    color: var(--seto-secondary);
 }

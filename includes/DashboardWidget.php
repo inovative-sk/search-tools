@@ -150,9 +150,9 @@ class DashboardWidget
 		}
 		$item = "
 			<tr style='$extra_css'>
-				<td class='st-text-center'>$index.</td> 
+				<td class='seto-text-center'>$index.</td> 
 				<td>$result->query</td>
-				<td class='st-text-center'> $result->query_count x</td>
+				<td class='seto-text-center'> $result->query_count x</td>
 			</tr>
 		";
 

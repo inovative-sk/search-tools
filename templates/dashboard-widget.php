@@ -6,22 +6,22 @@
     $home_url = home_url();
 ?>
 
-<div class="st-dashboard-wrap">
-    <ul class="st-dashboard-tabnav">
-        <li><a class="st-dashboard-tablink is-active" href="#st_tab_1"><?php esc_html_e('TODAY', 'search-tools'); ?></a></li>
-        <li><a class="st-dashboard-tablink" href="#st_tab_2"><?php esc_html_e('7 DAYS', 'search-tools'); ?></a></li>
-        <li><a class="st-dashboard-tablink" href="#st_tab_3"><?php esc_html_e('OVERALL', 'search-tools'); ?></a></li>
+<div class="seto-dashboard-wrap">
+    <ul class="seto-dashboard-tabnav">
+        <li><a class="seto-dashboard-tablink is-active" href="#seto_tab_1"><?php esc_html_e('TODAY', 'search-tools'); ?></a></li>
+        <li><a class="seto-dashboard-tablink" href="#seto_tab_2"><?php esc_html_e('7 DAYS', 'search-tools'); ?></a></li>
+        <li><a class="seto-dashboard-tablink" href="#seto_tab_3"><?php esc_html_e('OVERALL', 'search-tools'); ?></a></li>
     </ul>
 
-    <div class="st-dashboard-tabcontent-wrap">
-        <div id="st_tab_1" class="st-dashboard-tabcontent is-active">
+    <div class="seto-dashboard-tabcontent-wrap">
+        <div id="seto_tab_1" class="seto-dashboard-tabcontent is-active">
             <?php if( $today_html ): ?>
-                <table class="st-table st-dashboard-table">
+                <table class="seto-table seto-dashboard-table">
                     <thead>
                         <tr>
-                            <th class="st-text-center">#</th>
+                            <th class="seto-text-center">#</th>
                             <th><?php esc_html_e("query", "search-tools"); ?></th>
-                            <th class="st-text-center"><?php esc_html_e("searched", "search-tools"); ?></th>
+                            <th class="seto-text-center"><?php esc_html_e("searched", "search-tools"); ?></th>
                         </tr>
                     </thead>
 
@@ -30,20 +30,20 @@
                     </tbody>
                 </table>
             <?php else: ?>
-                <div class="st-no-results">
+                <div class="seto-no-results">
                     <?php esc_html_e("No searches for this period yet.", "search-tools"); ?>
                 </div>
             <?php endif; ?>
         </div>
 
-        <div id="st_tab_2" class="st-dashboard-tabcontent">
+        <div id="seto_tab_2" class="seto-dashboard-tabcontent">
             <?php if( $last_7_days_html ): ?>
-                <table class="st-table st-dashboard-table">
+                <table class="seto-table seto-dashboard-table">
                     <thead>
                         <tr>
-                            <th class="st-text-center">#</th>
+                            <th class="seto-text-center">#</th>
                             <th><?php esc_html_e("query", "search-tools"); ?></th>
-                            <th class="st-text-center"><?php esc_html_e("searched", "search-tools"); ?></th>
+                            <th class="seto-text-center"><?php esc_html_e("searched", "search-tools"); ?></th>
                         </tr>
                     </thead>
 
@@ -52,20 +52,20 @@
                     </tbody>
                 </table>
             <?php else: ?>
-                <div class="st-no-results">
+                <div class="seto-no-results">
                     <?php esc_html_e("No searches for this period yet.", "search-tools"); ?>
                 </div>
             <?php endif; ?>
         </div>
 
-        <div id="st_tab_3" class="st-dashboard-tabcontent">
+        <div id="seto_tab_3" class="seto-dashboard-tabcontent">
             <?php if( $overall_html ): ?>
-                <table class="st-table st-dashboard-table">
+                <table class="seto-table seto-dashboard-table">
                     <thead>
                         <tr>
-                            <th class="st-text-center">#</th>
+                            <th class="seto-text-center">#</th>
                             <th><?php esc_html_e("query", "search-tools"); ?></th>
-                            <th class="st-text-center"><?php esc_html_e("searched", "search-tools"); ?></th>
+                            <th class="seto-text-center"><?php esc_html_e("searched", "search-tools"); ?></th>
                         </tr>
                     </thead>
 
@@ -74,14 +74,14 @@
                     </tbody>
                 </table>
             <?php else: ?>
-                <div class="st-no-results">
+                <div class="seto-no-results">
                     <?php esc_html_e("No searches for this period yet.", "search-tools"); ?>
                 </div>
             <?php endif; ?>
         </div>
     </div>
 
-    <div class="st-text-center">
+    <div class="seto-text-center">
         <a href='<?php echo esc_url($home_url); ?>/wp-admin/admin.php?page=search-tools-insights'><?php esc_html_e("See more detailed overviews", "search-tools"); ?></a>
     </div>
 </div>

@@ -129,20 +129,20 @@ class Insights
 
 		?>
 			<div class="wrap">
-				<div class="st-header">
+				<div class="seto-header">
 					<div>
 						<h1 class="wp-heading-inline">
 							<?php esc_html_e( 'Search Insights', 'search-tools' ); ?>
 						</h1>
 						
-						<a href="?page=search-tools-insights&tab=all_users" class="st-header-navitem <?php if($tab==='all_users'):?>is-active<?php endif; ?>"><?php esc_html_e("All Users", "search-tools"); ?></a>
-						<a href="?page=search-tools-insights&tab=logged_in" class="st-header-navitem <?php if($tab==='logged_in'):?>is-active<?php endif; ?>"><?php esc_html_e("Logged in", "search-tools"); ?></a>
-						<a href="?page=search-tools-insights&tab=guests" class="st-header-navitem <?php if($tab==='guests'):?>is-active<?php endif; ?>"><?php esc_html_e("Guests", "search-tools"); ?></a>
+						<a href="?page=search-tools-insights&tab=all_users" class="seto-header-navitem <?php if($tab==='all_users'):?>is-active<?php endif; ?>"><?php esc_html_e("All Users", "search-tools"); ?></a>
+						<a href="?page=search-tools-insights&tab=logged_in" class="seto-header-navitem <?php if($tab==='logged_in'):?>is-active<?php endif; ?>"><?php esc_html_e("Logged in", "search-tools"); ?></a>
+						<a href="?page=search-tools-insights&tab=guests" class="seto-header-navitem <?php if($tab==='guests'):?>is-active<?php endif; ?>"><?php esc_html_e("Guests", "search-tools"); ?></a>
 					</div>
 						
 					<div style="display:none;">
-						<a class="st-btn" href="#" target="_blank"><?php esc_html_e("support", "search-tools"); ?></a>
-						<a class="st-btn st-btn-primary" href="#" target="_blank"><?php esc_html_e("upgrade to pro", "search-tools"); ?></a>
+						<a class="seto-btn" href="#" target="_blank"><?php esc_html_e("support", "search-tools"); ?></a>
+						<a class="seto-btn seto-btn-primary" href="#" target="_blank"><?php esc_html_e("upgrade to pro", "search-tools"); ?></a>
 					</div>
 				</div>
 								
@@ -452,8 +452,8 @@ class Insights
 			<tr class=' $extra_class ' style=' $extra_css'>
 				<td>$index.</td>				
 				<td>$result->query</td>
-				<td class='st-searches-cell st-text-center'>$result->query_count x</td>
-				<td class='st-text-center'>$results</td>
+				<td class='seto-searches-cell seto-text-center'>$result->query_count x</td>
+				<td class='seto-text-center'>$results</td>
 			</tr>
 		";
 
@@ -480,21 +480,21 @@ class Insights
 		}
 
 		$html = "
-			<h3 class='st-insights-heading'>$label:</h3>
+			<h3 class='seto-insights-heading'>$label:</h3>
 
-			<table class='st-table st-insights-table'>
+			<table class='seto-table seto-insights-table'>
 				<thead>
 					<tr>
 						<th>#</th>
 						<th>" . esc_html__('query', 'search-tools') . "</th>
-						<th class='st-searches-cell st-text-center'>" . esc_html__('searched', 'search-tools') . "</th>
-						<th class='st-text-center'>" . esc_html__('results', 'search-tools') . "</th>
+						<th class='seto-searches-cell seto-text-center'>" . esc_html__('searched', 'search-tools') . "</th>
+						<th class='seto-text-center'>" . esc_html__('results', 'search-tools') . "</th>
 					</tr>
 				<thead>	
 			</table>
 			
-			<div class='st-insights-table-wrap'>
-				<table class='st-table st-insights-table'>
+			<div class='seto-insights-table-wrap'>
+				<table class='seto-table seto-insights-table'>
 					<tbody>
 						$items
 					</tbody>

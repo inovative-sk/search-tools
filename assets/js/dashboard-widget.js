@@ -1,10 +1,10 @@
 jQuery(document).ready(function($){
-    $(".st-dashboard-tablink").on("click", function(e){
+    $(".seto-dashboard-tablink").on("click", function(e){
         e.preventDefault();
 
         var $href = $(this).attr("href"); 
 
-        $(".st-dashboard-tablink").removeClass("is-active");
+        $(".seto-dashboard-tablink").removeClass("is-active");
 
         $(this).addClass("is-active");
 
