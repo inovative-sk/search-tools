@@ -205,13 +205,13 @@ class ExtendOptions {
 	public function enqueue_assets( $hook ) {
 		// Register scripts for main setting page.
 		if ( 'search-tools_page_search-tools-extend' === $hook ) {
-			wp_enqueue_style("search-tools-select2", SEARCH_TOOLS_ASSETS_URL . "external/select2/css/select2.min.css", false, "1.1.0", "all");
+			wp_enqueue_style("search-tools-select2", SEARCH_TOOLS_ASSETS_URL . "external/select2/css/select2.min.css", false, "4.0.13", "all");
 			wp_enqueue_style( 'search-tools-jquery_ui', SEARCH_TOOLS_ASSETS_URL . 'jQueryUI/jquery-ui.min.css' );
 			wp_enqueue_style( 'search-tools-jquery_ui_theme', SEARCH_TOOLS_ASSETS_URL . 'jQueryUI/jquery-ui.theme.min.css' );
 
 			wp_enqueue_script( 'jquery-ui-datepicker' );
-			wp_enqueue_script("search-tools-select2", SEARCH_TOOLS_ASSETS_URL . "external/select2/js/select2.full.min.js", ["jquery"], "1.0", ["in_footer" => true]);
-			wp_enqueue_script("search-tools-extend", SEARCH_TOOLS_ASSETS_URL . "js/search-tools.js", ["jquery"], "1.1", ["in_footer" => true]);
+			wp_enqueue_script("search-tools-select2", SEARCH_TOOLS_ASSETS_URL . "external/select2/js/select2.full.min.js", ["jquery"], "4.0.13", ["in_footer" => true]);
+			wp_enqueue_script("search-tools-extend", SEARCH_TOOLS_ASSETS_URL . "js/search-tools.js", ["jquery"], "1.0.0", ["in_footer" => true]);
 		} 
 	}
 

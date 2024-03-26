@@ -25,7 +25,7 @@ global $wpdb;
 define("SEARCH_TOOLS_PLUGIN_DIR_PATH", plugin_dir_path( __FILE__ ));
 define("SEARCH_TOOLS_INCLUDES_PATH", SEARCH_TOOLS_PLUGIN_DIR_PATH . 'includes/' );
 define("SEARCH_TOOLS_ASSETS_URL", plugin_dir_url( __FILE__ ) . 'assets/' );
-define("SEARCH_TOOLS_DB_TABLE", $wpdb->prefix . 'st_search_insights');
+define("SEARCH_TOOLS_DB_TABLE", $wpdb->prefix . 'seto_search_insights');
 define("SEARCH_TOOLS_RESULTS_LIMIT", 100);
 
 /**
@@ -145,14 +145,14 @@ if ( ! class_exists( 'SETO_SearchTools' ) ) {
 
 		public function enqueue_assets() {			
 			if( $GLOBALS['hook_suffix'] === "index.php" ){
-				wp_enqueue_style("search-tools-dashboard-widget", SEARCH_TOOLS_ASSETS_URL . "css/dashboard-widget.css", false, "1.2.0", "all");
-				wp_enqueue_script("search-tools-dashboard-widget", SEARCH_TOOLS_ASSETS_URL . "js/dashboard-widget.js", ["jquery"], "1.03", ["in_footer" => true]);
+				wp_enqueue_style("search-tools-dashboard-widget", SEARCH_TOOLS_ASSETS_URL . "css/dashboard-widget.css", false, "1.0.0", "all");
+				wp_enqueue_script("search-tools-dashboard-widget", SEARCH_TOOLS_ASSETS_URL . "js/dashboard-widget.js", ["jquery"], "1.0.0", ["in_footer" => true]);
 			}
 
 			if( $GLOBALS['hook_suffix'] === "search-tools_page_search-tools-insights" ){
-				wp_enqueue_style("search-tools-insights", SEARCH_TOOLS_ASSETS_URL . "css/tools-insights.css", false, "1.2.0", "all");
-				wp_enqueue_script("search-tools-apexcharts", SEARCH_TOOLS_ASSETS_URL . "external/apexcharts/apexcharts.js", [], "1.0", ["in_footer" => true]);
-				wp_enqueue_script("search-tools-insights", SEARCH_TOOLS_ASSETS_URL . "js/tools-insights.js", [], "1.1.0", ["defer" => true, "in_footer" => true]);
+				wp_enqueue_style("search-tools-insights", SEARCH_TOOLS_ASSETS_URL . "css/tools-insights.css", false, "1.0.0", "all");
+				wp_enqueue_script("search-tools-apexcharts", SEARCH_TOOLS_ASSETS_URL . "external/apexcharts/apexcharts.min.js", [], "3.44.2", ["in_footer" => true]);
+				wp_enqueue_script("search-tools-insights", SEARCH_TOOLS_ASSETS_URL . "js/tools-insights.js", [], "1.0.0", ["defer" => true, "in_footer" => true]);
 			}
 		}
 
