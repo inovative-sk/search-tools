@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Search Tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-23 08:47+0000\n"
+"POT-Creation-Date: 2024-03-26 13:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -24,11 +24,11 @@ msgstr ""
 msgid "All Users"
 msgstr ""
 
-#: includes/ExtendOptions.php:461
+#: includes/ExtendOptions.php:468
 msgid "AND"
 msgstr ""
 
-#: includes/ExtendOptions.php:525
+#: includes/ExtendOptions.php:532
 msgid "Ascending"
 msgstr ""
 
@@ -42,25 +42,25 @@ msgid ""
 "default search engine and shows statistics what users look for."
 msgstr ""
 
-#: includes/ExtendOptions.php:484
+#: includes/ExtendOptions.php:491
 msgid ""
 "Contents will not appear in search results older than this date OR leave "
 "blank to disable this feature."
 msgstr ""
 
-#: templates/tools-chart.php:12
+#: templates/tools-chart.php:14
 msgid "Count"
 msgstr ""
 
-#: includes/ExtendOptions.php:509
+#: includes/ExtendOptions.php:516
 msgid "Date"
 msgstr ""
 
-#: includes/ExtendOptions.php:281
+#: includes/ExtendOptions.php:288
 msgid "Date seems to be in invalid format!"
 msgstr ""
 
-#: includes/ExtendOptions.php:524
+#: includes/ExtendOptions.php:531
 msgid "Descending"
 msgstr ""
 
@@ -88,13 +88,13 @@ msgstr ""
 msgid "https://www.wpsearchtools.com/"
 msgstr ""
 
-#: includes/ExtendOptions.php:394
+#: includes/ExtendOptions.php:401
 msgid ""
 "If checked then it will display those results whose Author \"Display name\" "
 "match the search terms."
 msgstr ""
 
-#: includes/ExtendOptions.php:442
+#: includes/ExtendOptions.php:449
 msgid ""
 "If you are selecting Media post type then save the settings once to enable "
 "more media settings."
@@ -104,7 +104,15 @@ msgstr ""
 msgid "Insights"
 msgstr ""
 
-#: includes/ExtendOptions.php:510
+#: includes/Insights.php:519
+msgid "Last 30 days"
+msgstr ""
+
+#: includes/Insights.php:518
+msgid "Last 7 days"
+msgstr ""
+
+#: includes/ExtendOptions.php:517
 msgid "Last Modified Date"
 msgstr ""
 
@@ -128,20 +136,24 @@ msgstr ""
 msgid "Miscellaneous Settings"
 msgstr ""
 
-#: includes/ExtendOptions.php:538
+#: includes/ExtendOptions.php:545
 msgid "No"
 msgstr ""
 
-#: includes/ExtendOptions.php:330
+#: includes/ExtendOptions.php:337
 msgid "No meta key found!"
 msgstr ""
 
-#: includes/ExtendOptions.php:448
+#: includes/ExtendOptions.php:455
 msgid "No public post type found!"
 msgstr ""
 
-#: includes/ExtendOptions.php:379
+#: includes/ExtendOptions.php:386
 msgid "No public taxonomy found!"
+msgstr ""
+
+#: templates/tools-chart.php:21
+msgid "No searches collected yet."
 msgstr ""
 
 #: templates/dashboard-widget.php:34 templates/dashboard-widget.php:56
@@ -149,21 +161,21 @@ msgstr ""
 msgid "No searches for this period yet."
 msgstr ""
 
-#: includes/ExtendOptions.php:514
+#: includes/ExtendOptions.php:521
 msgid "Number of Comments"
 msgstr ""
 
-#: includes/ExtendOptions.php:496
+#: includes/ExtendOptions.php:503
 msgid ""
 "Number of posts to display on search result page OR leave blank for default "
 "value."
 msgstr ""
 
-#: includes/ExtendOptions.php:462
+#: includes/ExtendOptions.php:469
 msgid "OR"
 msgstr ""
 
-#: includes/ExtendOptions.php:526
+#: includes/ExtendOptions.php:533
 msgid ""
 "Order the sorted search items in Descending or Ascending. Default is "
 "Descending."
@@ -173,19 +185,23 @@ msgstr ""
 msgid "OVERALL"
 msgstr ""
 
+#: includes/Insights.php:521
+msgid "Overall"
+msgstr ""
+
 #. Author of the plugin
 msgid "Peter Stehlik"
 msgstr ""
 
-#: includes/ExtendOptions.php:512
+#: includes/ExtendOptions.php:519
 msgid "Post Slug"
 msgstr ""
 
-#: includes/ExtendOptions.php:511
+#: includes/ExtendOptions.php:518
 msgid "Post Title"
 msgstr ""
 
-#: includes/ExtendOptions.php:513
+#: includes/ExtendOptions.php:520
 msgid "Post Type"
 msgstr ""
 
@@ -202,11 +218,11 @@ msgstr ""
 msgid "query"
 msgstr ""
 
-#: includes/ExtendOptions.php:515
+#: includes/ExtendOptions.php:522
 msgid "Random"
 msgstr ""
 
-#: includes/ExtendOptions.php:508
+#: includes/ExtendOptions.php:515
 msgid "Relevance"
 msgstr ""
 
@@ -222,19 +238,19 @@ msgstr ""
 msgid "Save Changes"
 msgstr ""
 
-#: includes/ExtendOptions.php:393
+#: includes/ExtendOptions.php:400
 msgid "Search in Author display name"
 msgstr ""
 
-#: includes/ExtendOptions.php:301
+#: includes/ExtendOptions.php:308
 msgid "Search in Content"
 msgstr ""
 
-#: includes/ExtendOptions.php:305
+#: includes/ExtendOptions.php:312
 msgid "Search in Excerpt"
 msgstr ""
 
-#: includes/ExtendOptions.php:297
+#: includes/ExtendOptions.php:304
 msgid "Search in Title"
 msgstr ""
 
@@ -246,12 +262,13 @@ msgstr ""
 msgid "Search Results Order"
 msgstr ""
 
+#. Name of the plugin
 #: includes/ExtendOptions.php:114 includes/ExtendOptions.php:115
 msgid "Search Tools"
 msgstr ""
 
 #. %s is the number of minimum WordPress version that Search Tools requires
-#: wp-search-tools.php:67
+#: search-tools.php:67
 #, php-format
 msgid ""
 "Search Tools plugin requires WordPress version %s or newer. Please update "
@@ -259,7 +276,7 @@ msgid ""
 msgstr ""
 
 #. %s is the number of minimum PHP version that Search Tools requires
-#: wp-search-tools.php:92
+#: search-tools.php:92
 #, php-format
 msgid ""
 "Search Tools requires PHP version %s or newer. You are running version "
@@ -271,7 +288,7 @@ msgstr ""
 msgid "searched"
 msgstr ""
 
-#: templates/tools-chart.php:7
+#: templates/tools-chart.php:9
 msgid "SEARCHES LAST 90 DAYS"
 msgstr ""
 
@@ -279,11 +296,11 @@ msgstr ""
 msgid "See more detailed overviews"
 msgstr ""
 
-#: includes/ExtendOptions.php:271
+#: includes/ExtendOptions.php:278
 msgid "Select at least one post type!"
 msgstr ""
 
-#: includes/ExtendOptions.php:276
+#: includes/ExtendOptions.php:283
 msgid "Select at least one setting to search!"
 msgstr ""
 
@@ -307,18 +324,18 @@ msgstr ""
 msgid "Select Taxonomies"
 msgstr ""
 
-#: includes/ExtendOptions.php:570
+#: includes/ExtendOptions.php:577
 msgid ""
 "Select the media types to limit the results by type. Leave blank to search "
 "all media types."
 msgstr ""
 
-#: includes/ExtendOptions.php:266
+#: includes/ExtendOptions.php:273
 msgid "Settings has been changed to WordPress default search setting."
 msgstr ""
 
 #. %1$s: anchor tag opening, %2$s: anchor tag closed.
-#: includes/ExtendOptions.php:520
+#: includes/ExtendOptions.php:527
 #, php-format
 msgid ""
 "Sort search results based on metadata of items. The default value is "
@@ -333,7 +350,7 @@ msgstr ""
 msgid "Terms Relation Type"
 msgstr ""
 
-#: includes/ExtendOptions.php:467
+#: includes/ExtendOptions.php:474
 msgid ""
 "This option is disabled because you have selected \"Match the search term "
 "exactly\".  When using the exact match option, the sentence is not broken "
@@ -341,11 +358,19 @@ msgid ""
 "meaning."
 msgstr ""
 
+#: includes/Insights.php:520
+msgid "This year"
+msgstr ""
+
 #: templates/dashboard-widget.php:11
 msgid "TODAY"
 msgstr ""
 
-#: includes/ExtendOptions.php:469
+#: includes/Insights.php:517
+msgid "Today"
+msgstr ""
+
+#: includes/ExtendOptions.php:476
 msgid ""
 "Type of query relation between search terms. e.g. someone searches for \"my "
 "query\" then define the relation between \"my\" and \"query\". The default "
@@ -356,7 +381,7 @@ msgstr ""
 msgid "upgrade to pro"
 msgstr ""
 
-#: includes/ExtendOptions.php:539
+#: includes/ExtendOptions.php:546
 msgid ""
 "Whether to match search term exactly or partially e.g. If someone search "
 "\"Word\" it will display items matching \"WordPress\" or \"Word\" but if you "
@@ -364,14 +389,10 @@ msgid ""
 "value is No."
 msgstr ""
 
-#. Name of the plugin
-msgid "WP Search Tools"
-msgstr ""
-
 #: includes/ExtendOptions.php:135
 msgid "WP Search Tools Plugin"
 msgstr ""
 
-#: includes/ExtendOptions.php:537
+#: includes/ExtendOptions.php:544
 msgid "Yes"
 msgstr ""

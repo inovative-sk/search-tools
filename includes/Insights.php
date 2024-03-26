@@ -152,7 +152,7 @@ class Insights
 						require_once( SEARCH_TOOLS_PLUGIN_DIR_PATH . "/templates/tools-chart.php" );
 					}
 
-					if( file_exists( SEARCH_TOOLS_PLUGIN_DIR_PATH . "/templates/tools-premium.php" ) ){
+					if( !empty($day_counts) && file_exists( SEARCH_TOOLS_PLUGIN_DIR_PATH . "/templates/tools-premium.php" ) ){
 						require_once( SEARCH_TOOLS_PLUGIN_DIR_PATH . "/templates/tools-premium.php" );
 					}					
 				?>
@@ -469,7 +469,7 @@ class Insights
      */
 	private function html_helper( $data = [], $label = "Overview" ){
 		if( empty( $data ) ){
-			return;
+			return "";
 		}
 
 		$items = "";

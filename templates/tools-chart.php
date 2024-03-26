@@ -4,6 +4,8 @@
     }
 ?>
 
+<?php if( !empty($day_counts) ): ?>
+
 <h3 class="st-text-center"><strong><?php esc_html_e("SEARCHES LAST 90 DAYS", "search-tools"); ?>:</strong></h3>
 
 <script>						
@@ -13,3 +15,9 @@
 </script>
 
 <div id="st_chart"></div>
+
+<?php else: ?>
+    
+    <h2><?php esc_html_e("No searches collected yet. Do one by yourself or wait for visitors data.", "search-tools"); ?></h2>
+    
+<?php endif; ?>
