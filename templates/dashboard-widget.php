@@ -8,9 +8,9 @@
 
 <div class="st-dashboard-wrap">
     <ul class="st-dashboard-tabnav">
-        <li><a class="st-dashboard-tablink is-active" href="#st_tab_1"><?php _e('TODAY', 'search-tools'); ?></a></li>
-        <li><a class="st-dashboard-tablink" href="#st_tab_2"><?php _e('7 DAYS', 'search-tools'); ?></a></li>
-        <li><a class="st-dashboard-tablink" href="#st_tab_3"><?php _e('OVERALL', 'search-tools'); ?></a></li>
+        <li><a class="st-dashboard-tablink is-active" href="#st_tab_1"><?php esc_html_e('TODAY', 'search-tools'); ?></a></li>
+        <li><a class="st-dashboard-tablink" href="#st_tab_2"><?php esc_html_e('7 DAYS', 'search-tools'); ?></a></li>
+        <li><a class="st-dashboard-tablink" href="#st_tab_3"><?php esc_html_e('OVERALL', 'search-tools'); ?></a></li>
     </ul>
 
     <div class="st-dashboard-tabcontent-wrap">
@@ -20,18 +20,18 @@
                     <thead>
                         <tr>
                             <th class="st-text-center">#</th>
-                            <th><?php _e("query", "search-tools"); ?></th>
-                            <th class="st-text-center"><?php _e("searched", "search-tools"); ?></th>
+                            <th><?php esc_html_e("query", "search-tools"); ?></th>
+                            <th class="st-text-center"><?php esc_html_e("searched", "search-tools"); ?></th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <?php echo $today_html; ?>        
+                        <?php echo wp_kses_post($today_html); ?>        
                     </tbody>
                 </table>
             <?php else: ?>
                 <div class="st-no-results">
-                    <?php _e("No searches for this period yet.", "search-tools"); ?>
+                    <?php esc_html_e("No searches for this period yet.", "search-tools"); ?>
                 </div>
             <?php endif; ?>
         </div>
@@ -42,18 +42,18 @@
                     <thead>
                         <tr>
                             <th class="st-text-center">#</th>
-                            <th><?php _e("query", "search-tools"); ?></th>
-                            <th class="st-text-center"><?php _e("searched", "search-tools"); ?></th>
+                            <th><?php esc_html_e("query", "search-tools"); ?></th>
+                            <th class="st-text-center"><?php esc_html_e("searched", "search-tools"); ?></th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <?php echo $last_7_days_html; ?>        
+                        <?php echo wp_kses_post($last_7_days_html); ?>        
                     </tbody>
                 </table>
             <?php else: ?>
                 <div class="st-no-results">
-                    <?php _e("No searches for this period yet.", "search-tools"); ?>
+                    <?php esc_html_e("No searches for this period yet.", "search-tools"); ?>
                 </div>
             <?php endif; ?>
         </div>
@@ -64,25 +64,25 @@
                     <thead>
                         <tr>
                             <th class="st-text-center">#</th>
-                            <th><?php _e("query", "search-tools"); ?></th>
-                            <th class="st-text-center"><?php _e("searched", "search-tools"); ?></th>
+                            <th><?php esc_html_e("query", "search-tools"); ?></th>
+                            <th class="st-text-center"><?php esc_html_e("searched", "search-tools"); ?></th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <?php echo $overall_html; ?>        
+                        <?php echo wp_kses_post($overall_html); ?>        
                     </tbody>
                 </table>
             <?php else: ?>
                 <div class="st-no-results">
-                    <?php _e("No searches for this period yet.", "search-tools"); ?>
+                    <?php esc_html_e("No searches for this period yet.", "search-tools"); ?>
                 </div>
             <?php endif; ?>
         </div>
     </div>
 
     <div class="st-text-center">
-        <a href='<?php echo $home_url; ?>/wp-admin/admin.php?page=search-tools-insights'><?php _e("See more detailed overviews", "search-tools"); ?></a>
+        <a href='<?php echo esc_url($home_url); ?>/wp-admin/admin.php?page=search-tools-insights'><?php esc_html_e("See more detailed overviews", "search-tools"); ?></a>
     </div>
 </div>
 

@@ -111,8 +111,8 @@ class ExtendOptions {
      */
 	public function add_menu_page() {
 		add_menu_page(
-			__( 'Search Tools', 'search-tools' ),
-			__( 'Search Tools', 'search-tools' ),
+			esc_html__( 'Search Tools', 'search-tools' ),
+			esc_html__( 'Search Tools', 'search-tools' ),
 			'manage_options',
 			'wp-search-tools',
 			[$this, 'search_tools_content'],
@@ -122,8 +122,8 @@ class ExtendOptions {
 
 		add_submenu_page(
 			'wp-search-tools',
-			__( 'Extend Search', 'search-tools' ),
-			__( 'Extend Search', 'search-tools' ),
+			esc_html__( 'Extend Search', 'search-tools' ),
+			esc_html__( 'Extend Search', 'search-tools' ),
 			'manage_options',
 			'search-tools-extend',
 			[$this, 'extend_search_content']
@@ -132,10 +132,10 @@ class ExtendOptions {
 
 	public function search_tools_content(){ ?>
 		<div class="wrap">
-			<h2><?php _e( 'WP Search Tools Plugin', 'search-tools' ); ?></h2>
+			<h2><?php esc_html_e( 'WP Search Tools Plugin', 'search-tools' ); ?></h2>
 
 			<p>
-				<?php _e( 'PRO version is yet to come. Check the website for more information', 'search-tools' ); ?>
+				<?php esc_html_e( 'PRO version is yet to come. Check the website for more information', 'search-tools' ); ?>
 				<a href="https://www.wpsearchtools.com" target="_blank">wpsearchtools.com</a>
 			</p>
 		</div>
@@ -149,16 +149,16 @@ class ExtendOptions {
 	 */
 	public function extend_search_content(){ ?>
 		<div class="wrap">
-			<h2><?php _e( 'Extend WordPress Search', 'search-tools' ); ?></h2>
+			<h2><?php esc_html_e( 'Extend WordPress Search', 'search-tools' ); ?></h2>
 			<?php settings_errors(); ?>
 			<form method="post" action="options.php">
 				<?php
 				settings_fields( 'st_option_group' );
 				do_settings_sections( 'wp-st' );
 
-				submit_button( __( 'Save Changes', 'search-tools' ), 'primary', 'submit', false );
-				echo '&nbsp;&nbsp;';
-				submit_button( __( 'Reset to WP Default', 'search-tools' ), 'secondary', 'reset', false );
+				submit_button( esc_html__( 'Save Changes', 'search-tools' ), 'primary', 'submit', false );
+				echo esc_html('&nbsp;&nbsp;');
+				submit_button( esc_html__( 'Reset to WP Default', 'search-tools' ), 'secondary', 'reset', false );
 				?>
 			</form>
 		</div>
@@ -175,25 +175,25 @@ class ExtendOptions {
 		register_setting( 'st_option_group', $this->option_key_name, array( $this, 'st_save' ) );
 
 		// Add Sections.
-		add_settings_section( 'st_section_1', __( 'Select Fields to include in WordPress default Search', 'search-tools' ), array( $this, 'st_section_content' ), 'wp-st' );
+		add_settings_section( 'st_section_1', esc_html__( 'Select Fields to include in WordPress default Search', 'search-tools' ), array( $this, 'st_section_content' ), 'wp-st' );
 		if ( in_array( 'attachment', $this->st_settings['post_types'], true ) ) {
-			add_settings_section( 'st_section_media', __( 'Media Search Settings', 'search-tools' ), null, 'wp-st' );
+			add_settings_section( 'st_section_media', esc_html__( 'Media Search Settings', 'search-tools' ), null, 'wp-st' );
 		}
-		add_settings_section( 'st_section_misc', __( 'Miscellaneous Settings', 'search-tools' ), null, 'wp-st' );
+		add_settings_section( 'st_section_misc', esc_html__( 'Miscellaneous Settings', 'search-tools' ), null, 'wp-st' );
 
 		// Add fields.
-		add_settings_field( 'st_title_and_post_content', __( 'General Search Setting', 'search-tools' ), array( $this, 'st_title_content_checkbox' ), 'wp-st', 'st_section_1' );
-		add_settings_field( 'st_list_custom_fields', __( 'Select Meta Key Names', 'search-tools' ), array( $this, 'st_custom_field_name_list' ), 'wp-st', 'st_section_1' );
-		add_settings_field( 'st_list_taxonomies', __( 'Select Taxonomies', 'search-tools' ), array( $this, 'st_taxonomies_settings' ), 'wp-st', 'st_section_1' );
-		add_settings_field( 'st_include_authors', __( 'Author Setting', 'search-tools' ), array( $this, 'st_author_settings' ), 'wp-st', 'st_section_1' );
-		add_settings_field( 'st_list_post_types', __( 'Select Post Types', 'search-tools' ), array( $this, 'st_post_types_settings' ), 'wp-st', 'st_section_1' );
-		add_settings_field( 'st_terms_relation_type', __( 'Terms Relation Type', 'search-tools' ), array( $this, 'st_terms_relation_type' ), 'wp-st', 'st_section_misc', array( 'label_for' => 'es_terms_relation' ) );
+		add_settings_field( 'st_title_and_post_content', esc_html__( 'General Search Setting', 'search-tools' ), array( $this, 'st_title_content_checkbox' ), 'wp-st', 'st_section_1' );
+		add_settings_field( 'st_list_custom_fields', esc_html__( 'Select Meta Key Names', 'search-tools' ), array( $this, 'st_custom_field_name_list' ), 'wp-st', 'st_section_1' );
+		add_settings_field( 'st_list_taxonomies', esc_html__( 'Select Taxonomies', 'search-tools' ), array( $this, 'st_taxonomies_settings' ), 'wp-st', 'st_section_1' );
+		add_settings_field( 'st_include_authors', esc_html__( 'Author Setting', 'search-tools' ), array( $this, 'st_author_settings' ), 'wp-st', 'st_section_1' );
+		add_settings_field( 'st_list_post_types', esc_html__( 'Select Post Types', 'search-tools' ), array( $this, 'st_post_types_settings' ), 'wp-st', 'st_section_1' );
+		add_settings_field( 'st_terms_relation_type', esc_html__( 'Terms Relation Type', 'search-tools' ), array( $this, 'st_terms_relation_type' ), 'wp-st', 'st_section_misc', array( 'label_for' => 'es_terms_relation' ) );
 
-		add_settings_field( 'st_exact_search', __( 'Match the search term exactly', 'search-tools' ), array( $this, 'st_exact_search' ), 'wp-st', 'st_section_misc' );
-		add_settings_field( 'st_exclude_older_results', __( 'Select date to exclude older results', 'search-tools' ), array( $this, 'st_exclude_results' ), 'wp-st', 'st_section_misc', array( 'label_for' => 'st_exclude_date' ) );
-		add_settings_field( 'st_number_of_posts', __( 'Posts per page', 'search-tools' ), array( $this, 'st_posts_per_page' ), 'wp-st', 'st_section_misc', array( 'label_for' => 'es_posts_per_page' ) );
-		add_settings_field( 'st_search_results_order', __( 'Search Results Order', 'search-tools' ), array( $this, 'st_search_results_order' ), 'wp-st', 'st_section_misc', array( 'label_for' => 'es_search_results_order' ) );
-		add_settings_field( 'st_media_types', __( 'Media Types', 'search-tools' ), array( $this, 'st_media_types' ), 'wp-st', 'st_section_media' );
+		add_settings_field( 'st_exact_search', esc_html__( 'Match the search term exactly', 'search-tools' ), array( $this, 'st_exact_search' ), 'wp-st', 'st_section_misc' );
+		add_settings_field( 'st_exclude_older_results', esc_html__( 'Select date to exclude older results', 'search-tools' ), array( $this, 'st_exclude_results' ), 'wp-st', 'st_section_misc', array( 'label_for' => 'st_exclude_date' ) );
+		add_settings_field( 'st_number_of_posts', esc_html__( 'Posts per page', 'search-tools' ), array( $this, 'st_posts_per_page' ), 'wp-st', 'st_section_misc', array( 'label_for' => 'es_posts_per_page' ) );
+		add_settings_field( 'st_search_results_order', esc_html__( 'Search Results Order', 'search-tools' ), array( $this, 'st_search_results_order' ), 'wp-st', 'st_section_misc', array( 'label_for' => 'es_search_results_order' ) );
+		add_settings_field( 'st_media_types', esc_html__( 'Media Types', 'search-tools' ), array( $this, 'st_media_types' ), 'wp-st', 'st_section_media' );
 	}
 
 	/**
@@ -263,22 +263,22 @@ class ExtendOptions {
 		$settings = $this->st_settings;
 
 		if ( isset( $_POST['reset'] ) ) {
-			add_settings_error( 'st_error', 'st_error_reset', __( 'Settings has been changed to WordPress default search setting.', 'search-tools' ), 'updated' );
+			add_settings_error( 'st_error', 'st_error_reset', esc_html__( 'Settings has been changed to WordPress default search setting.', 'search-tools' ), 'updated' );
 			return $this->default_options();
 		}
 
 		if ( ! isset( $input['post_types'] ) || empty( $input['post_types'] ) ) {
-			add_settings_error( 'st_error', 'st_error_post_type', __( 'Select at least one post type!', 'search-tools' ) );
+			add_settings_error( 'st_error', 'st_error_post_type', esc_html__( 'Select at least one post type!', 'search-tools' ) );
 			return $settings;
 		}
 
 		if ( empty( $input['title'] ) && empty( $input['content'] ) && empty( $input['excerpt'] ) && empty( $input['meta_keys'] ) && empty( $input['taxonomies'] ) && empty( $input['authors'] ) ) {
-			add_settings_error( 'st_error', 'st_error_all_empty', __( 'Select at least one setting to search!', 'search-tools' ) );
+			add_settings_error( 'st_error', 'st_error_all_empty', esc_html__( 'Select at least one setting to search!', 'search-tools' ) );
 			return $settings;
 		}
 
 		if ( ! empty( $input['exclude_date'] ) && ! strtotime( $input['exclude_date'] ) ) {
-			add_settings_error( 'st_error', 'st_error_invalid_date', __( 'Date seems to be in invalid format!', 'search-tools' ) );
+			add_settings_error( 'st_error', 'st_error_invalid_date', esc_html__( 'Date seems to be in invalid format!', 'search-tools' ) );
 			return $settings;
 		}
 
@@ -292,17 +292,17 @@ class ExtendOptions {
 	 */
 	public function st_title_content_checkbox() {
 		?>
-		<input type="hidden" name="<?php echo $this->option_key_name; ?>[title]" value="0" />
-		<input <?php checked( $this->st_settings['title'] ); ?> type="checkbox" id="estitle" name="<?php echo $this->option_key_name; ?>[title]" value="1" />&nbsp;
-		<label for="estitle"><?php _e( 'Search in Title', 'search-tools' ); ?></label>
+		<input type="hidden" name="<?php echo esc_attr($this->option_key_name); ?>[title]" value="0" />
+		<input <?php checked( esc_attr($this->st_settings['title']) ); ?> type="checkbox" id="seto_title" name="<?php echo esc_attr($this->option_key_name); ?>[title]" value="1" />&nbsp;
+		<label for="seto_title"><?php esc_html_e( 'Search in Title', 'search-tools' ); ?></label>
 		<br />
-		<input type="hidden" name="<?php echo $this->option_key_name; ?>[content]" value="0" />
-		<input <?php checked( $this->st_settings['content'] ); ?> type="checkbox" id="escontent" name="<?php echo $this->option_key_name; ?>[content]" value="1" />&nbsp;
-		<label for="escontent"><?php _e( 'Search in Content', 'search-tools' ); ?></label>
+		<input type="hidden" name="<?php echo esc_attr($this->option_key_name); ?>[content]" value="0" />
+		<input <?php checked( esc_attr($this->st_settings['content']) ); ?> type="checkbox" id="seto_content" name="<?php echo esc_attr($this->option_key_name); ?>[content]" value="1" />&nbsp;
+		<label for="seto_content"><?php esc_html_e( 'Search in Content', 'search-tools' ); ?></label>
 		<br />
-		<input type="hidden" name="<?php echo $this->option_key_name; ?>[excerpt]" value="0" />
-		<input <?php checked( $this->st_settings['excerpt'] ); ?> type="checkbox" id="esexcerpt" name="<?php echo $this->option_key_name; ?>[excerpt]" value="1" />&nbsp;
-		<label for="esexcerpt"><?php _e( 'Search in Excerpt', 'search-tools' ); ?></label>
+		<input type="hidden" name="<?php echo esc_attr($this->option_key_name); ?>[excerpt]" value="0" />
+		<input <?php checked( esc_attr($this->st_settings['excerpt']) ); ?> type="checkbox" id="seto_excerpt" name="<?php echo esc_attr( $this->option_key_name ); ?>[excerpt]" value="1" />&nbsp;
+		<label for="seto_excerpt"><?php esc_html_e( 'Search in Excerpt', 'search-tools' ); ?></label>
 		<?php
 	}
 
@@ -315,11 +315,11 @@ class ExtendOptions {
 		$meta_keys = $this->st_fields();
 		if ( ! empty( $meta_keys ) ) {
 			?>
-			<select class="st-select2" multiple="multiple" name="<?php echo $this->option_key_name; ?>[meta_keys][]">
+			<select class="st-select2" multiple="multiple" name="<?php echo esc_attr($this->option_key_name); ?>[meta_keys][]">
 			<?php
 			foreach ( (array) $meta_keys as $meta_key ) {
 				?>
-				<option <?php echo $this->st_checked( $meta_key, $this->st_settings['meta_keys'], true ); ?> value="<?php echo $meta_key; ?>"><?php echo $meta_key; ?></option>
+				<option <?php echo esc_attr( $this->st_checked( $meta_key, $this->st_settings['meta_keys'], true ) ); ?> value="<?php echo esc_attr($meta_key); ?>"><?php echo esc_html($meta_key); ?></option>
 				<?php
 			}
 			?>
@@ -327,7 +327,7 @@ class ExtendOptions {
 			<?php
 		} else {
 			?>
-			<em><?php _e( 'No meta key found!', 'search-tools' ); ?></em>
+			<em><?php esc_html_e( 'No meta key found!', 'search-tools' ); ?></em>
 			<?php
 		}
 	}
@@ -362,12 +362,12 @@ class ExtendOptions {
 		$all_taxonomies = apply_filters( 'st_tax', get_taxonomies( $tax_args, 'objects' ) );
 		if ( is_array( $all_taxonomies ) && ! empty( $all_taxonomies ) ) {
 			?>
-			<select multiple="multiple" class="st-select2" name="<?php echo $this->option_key_name; ?>[taxonomies][]">
+			<select multiple="multiple" class="st-select2" name="<?php echo esc_attr($this->option_key_name); ?>[taxonomies][]">
 			<?php
 			foreach ( $all_taxonomies as $tax_name => $tax_obj ) {
 				?>
-				<option <?php echo $this->st_checked( $tax_name, $this->st_settings['taxonomies'], true ); ?> value="<?php echo $tax_name; ?>">
-				<?php echo ! empty( $tax_obj->labels->name ) ? $tax_obj->labels->name : $tax_name; ?>
+				<option <?php echo esc_attr( $this->st_checked( $tax_name, $this->st_settings['taxonomies'], true ) ); ?> value="<?php echo esc_attr($tax_name); ?>">
+				<?php echo ! empty( $tax_obj->labels->name ) ? esc_html($tax_obj->labels->name) : esc_html($tax_name); ?>
 				</option>
 				<?php
 			}
@@ -376,7 +376,7 @@ class ExtendOptions {
 			<?php
 		} else {
 			?>
-			<em><?php _e( 'No public taxonomy found!', 'search-tools' ); ?></em>
+			<em><?php esc_html_e( 'No public taxonomy found!', 'search-tools' ); ?></em>
 			<?php
 		}
 	}
@@ -388,10 +388,10 @@ class ExtendOptions {
 	 */
 	public function st_author_settings() {
 		?>
-		<input name="<?php echo $this->option_key_name; ?>[authors]" type="hidden" value="0" />
-		<input id="st_include_authors" <?php checked( $this->st_settings['authors'] ); ?> type="checkbox" value="1" name="<?php echo $this->option_key_name; ?>[authors]" />
-		<label for="st_include_authors"><?php _e( 'Search in Author display name', 'search-tools' ); ?></label>
-		<p class="description"><?php _e( 'If checked then it will display those results whose Author "Display name" match the search terms.', 'search-tools' ); ?></p>
+		<input name="<?php echo esc_attr( $this->option_key_name ); ?>[authors]" type="hidden" value="0" />
+		<input id="st_include_authors" <?php checked( esc_attr($this->st_settings['authors'] ) ); ?> type="checkbox" value="1" name="<?php echo esc_attr($this->option_key_name); ?>[authors]" />
+		<label for="st_include_authors"><?php esc_html_e( 'Search in Author display name', 'search-tools' ); ?></label>
+		<p class="description"><?php esc_html_e( 'If checked then it will display those results whose Author "Display name" match the search terms.', 'search-tools' ); ?></p>
 		<?php
 	}
 
@@ -426,12 +426,12 @@ class ExtendOptions {
 
 		if ( is_array( $all_post_types ) && ! empty( $all_post_types ) ) {
 			?>
-			<select multiple="multiple" class="st-select2" name="<?php echo $this->option_key_name; ?>[post_types][]">
+			<select multiple="multiple" class="st-select2" name="<?php echo esc_attr($this->option_key_name); ?>[post_types][]">
 			<?php
 			foreach ( $all_post_types as $post_name => $post_obj ) {
 				?>
-				<option <?php echo $this->st_checked( $post_name, $this->st_settings['post_types'], true ); ?> value="<?php echo $post_name; ?>" >
-				<?php echo isset( $post_obj->labels->name ) ? $post_obj->labels->name : $post_name; ?>
+				<option <?php echo esc_attr($this->st_checked( $post_name, $this->st_settings['post_types'], true )); ?> value="<?php echo esc_attr($post_name); ?>" >
+				<?php echo isset( $post_obj->labels->name ) ? esc_html($post_obj->labels->name) : esc_html($post_name); ?>
 				</option>
 				<?php
 			}
@@ -439,13 +439,13 @@ class ExtendOptions {
 			</select>
 			<p class="description">
 				<?php
-					_e( 'If you are selecting Media post type then save the settings once to enable more media settings.', 'search-tools' );
+					esc_html_e( 'If you are selecting Media post type then save the settings once to enable more media settings.', 'search-tools' );
 				?>
 			</p>
 			<?php
 		} else {
 			?>
-			<em><?php _e( 'No public post type found!', 'search-tools' ); ?></em>
+			<em><?php esc_html_e( 'No public post type found!', 'search-tools' ); ?></em>
 			<?php
 		}
 	}
@@ -457,16 +457,16 @@ class ExtendOptions {
 	 */
 	public function st_terms_relation_type() {
 		?>
-		<select <?php echo $this->st_disabled( $this->st_settings['exact_match'], 'yes' ); ?> id="es_terms_relation" name="<?php echo $this->option_key_name; ?>[terms_relation]">
-			<option <?php selected( $this->st_settings['terms_relation'], 1 ); ?> value="1"><?php _e( 'AND', 'search-tools' ); ?></option>
-			<option <?php selected( $this->st_settings['terms_relation'], 2 ); ?> value="2"><?php _e( 'OR', 'search-tools' ); ?></option>
+		<select <?php echo esc_attr($this->st_disabled( $this->st_settings['exact_match'], 'yes' )); ?> id="es_terms_relation" name="<?php echo esc_attr($this->option_key_name); ?>[terms_relation]">
+			<option <?php selected( esc_attr($this->st_settings['terms_relation']), 1 ); ?> value="1"><?php esc_html_e( 'AND', 'search-tools' ); ?></option>
+			<option <?php selected( esc_attr($this->st_settings['terms_relation']), 2 ); ?> value="2"><?php esc_html_e( 'OR', 'search-tools' ); ?></option>
 		</select>
 		<p class="description">
 			<?php
 			if ( 'yes' === $this->st_settings['exact_match'] ) {
-				_e( 'This option is disabled because you have selected "Match the search term exactly".  When using the exact match option, the sentence is not broken into terms instead the whole sentence is matched thus this option has no meaning.', 'search-tools' );
+				esc_html_e( 'This option is disabled because you have selected "Match the search term exactly".  When using the exact match option, the sentence is not broken into terms instead the whole sentence is matched thus this option has no meaning.', 'search-tools' );
 			} else {
-				_e( 'Type of query relation between search terms. e.g. someone searches for "my query" then define the relation between "my" and "query". The default value is AND.', 'search-tools' );
+				esc_html_e( 'Type of query relation between search terms. e.g. someone searches for "my query" then define the relation between "my" and "query". The default value is AND.', 'search-tools' );
 			}
 			?>
 		</p>
@@ -480,8 +480,8 @@ class ExtendOptions {
 	 */
 	public function st_exclude_results() {
 		?>
-		<input class="regular-text" type="text" value="<?php echo esc_attr( $this->st_settings['exclude_date'] ); ?>" name="<?php echo $this->option_key_name; ?>[exclude_date]" id="st_exclude_date" />
-		<p class="description"><?php _e( 'Contents will not appear in search results older than this date OR leave blank to disable this feature.', 'search-tools' ); ?></p>
+		<input class="regular-text" type="text" value="<?php echo esc_attr( $this->st_settings['exclude_date'] ); ?>" name="<?php echo esc_attr($this->option_key_name); ?>[exclude_date]" id="st_exclude_date" />
+		<p class="description"><?php esc_html_e( 'Contents will not appear in search results older than this date OR leave blank to disable this feature.', 'search-tools' ); ?></p>
 		<?php
 	}
 
@@ -492,8 +492,8 @@ class ExtendOptions {
 	 */
 	public function st_posts_per_page() {
 		?>
-		<input min="-1" class="small-text" type="number" value="<?php echo esc_attr( $this->st_settings['posts_per_page'] ); ?>" name="<?php echo $this->option_key_name; ?>[posts_per_page]" id="es_posts_per_page" />
-		<p class="description"><?php _e( 'Number of posts to display on search result page OR leave blank for default value.', 'search-tools' ); ?></p>
+		<input min="-1" class="small-text" type="number" value="<?php echo esc_attr( $this->st_settings['posts_per_page'] ); ?>" name="<?php echo esc_attr($this->option_key_name); ?>[posts_per_page]" id="es_posts_per_page" />
+		<p class="description"><?php esc_html_e( 'Number of posts to display on search result page OR leave blank for default value.', 'search-tools' ); ?></p>
 		<?php
 	}
 
@@ -504,26 +504,26 @@ class ExtendOptions {
 	 */
 	public function st_search_results_order() {
 		?>
-		<select id="es_search_results_order" name="<?php echo $this->option_key_name; ?>[orderby]">
-			<option <?php selected( $this->st_settings['orderby'], '' ); ?> value=""><?php _e( 'Relevance', 'search-tools' ); ?></option>
-			<option <?php selected( $this->st_settings['orderby'], 'date' ); ?> value="date"><?php _e( 'Date', 'search-tools' ); ?></option>
-			<option <?php selected( $this->st_settings['orderby'], 'modified' ); ?> value="modified"><?php _e( 'Last Modified Date', 'search-tools' ); ?></option>
-			<option <?php selected( $this->st_settings['orderby'], 'title' ); ?> value="title"><?php _e( 'Post Title', 'search-tools' ); ?></option>
-			<option <?php selected( $this->st_settings['orderby'], 'name' ); ?> value="name"><?php _e( 'Post Slug', 'search-tools' ); ?></option>
-			<option <?php selected( $this->st_settings['orderby'], 'type' ); ?> value="type"><?php _e( 'Post Type', 'search-tools' ); ?></option>
-			<option <?php selected( $this->st_settings['orderby'], 'comment_count' ); ?> value="comment_count"><?php _e( 'Number of Comments', 'search-tools' ); ?></option>
-			<option <?php selected( $this->st_settings['orderby'], 'rand' ); ?> value="rand"><?php _e( 'Random', 'search-tools' ); ?></option>
+		<select id="es_search_results_order" name="<?php echo esc_attr($this->option_key_name); ?>[orderby]">
+			<option <?php selected( esc_attr($this->st_settings['orderby']), '' ); ?> value=""><?php esc_html_e( 'Relevance', 'search-tools' ); ?></option>
+			<option <?php selected( esc_attr($this->st_settings['orderby']), 'date' ); ?> value="date"><?php esc_html_e( 'Date', 'search-tools' ); ?></option>
+			<option <?php selected( esc_attr($this->st_settings['orderby']), 'modified' ); ?> value="modified"><?php esc_html_e( 'Last Modified Date', 'search-tools' ); ?></option>
+			<option <?php selected( esc_attr($this->st_settings['orderby']), 'title' ); ?> value="title"><?php esc_html_e( 'Post Title', 'search-tools' ); ?></option>
+			<option <?php selected( esc_attr($this->st_settings['orderby']), 'name' ); ?> value="name"><?php esc_html_e( 'Post Slug', 'search-tools' ); ?></option>
+			<option <?php selected( esc_attr($this->st_settings['orderby']), 'type' ); ?> value="type"><?php esc_html_e( 'Post Type', 'search-tools' ); ?></option>
+			<option <?php selected( esc_attr($this->st_settings['orderby']), 'comment_count' ); ?> value="comment_count"><?php esc_html_e( 'Number of Comments', 'search-tools' ); ?></option>
+			<option <?php selected( esc_attr($this->st_settings['orderby']), 'rand' ); ?> value="rand"><?php esc_html_e( 'Random', 'search-tools' ); ?></option>
 		</select>
 		<p class="description">
 			<?php
 			/* translators: %1$s: anchor tag opening, %2$s: anchor tag closed. */
-			echo sprintf( __( 'Sort search results based on metadata of items. The default value is %1$sRelevance%2$s.', 'search-tools' ), '<a href="https://developer.wordpress.org/reference/classes/wp_query/#order-orderby-parameters">', '</a>' );
+			echo sprintf( esc_html__( 'Sort search results based on metadata of items. The default value is %1$sRelevance%2$s.', 'search-tools' ), '<a href="https://developer.wordpress.org/reference/classes/wp_query/#order-orderby-parameters" target="_blank">', '</a>' );
 			?>
 		</p>
 		<br />
-		<label><input <?php echo $this->st_checked( $this->st_settings['order'], array( 'DESC' ) ); ?> type="radio" value="DESC" name="<?php echo $this->option_key_name; ?>[order]" /><?php _e( 'Descending', 'search-tools' ); ?></label>
-		<label><input <?php echo $this->st_checked( $this->st_settings['order'], array( 'ASC' ) ); ?> type="radio" value="ASC" name="<?php echo $this->option_key_name; ?>[order]" /><?php _e( 'Ascending', 'search-tools' ); ?></label>
-		<p class="description"><?php _e( 'Order the sorted search items in Descending or Ascending. Default is Descending.', 'search-tools' ); ?></p>
+		<label><input <?php echo esc_attr($this->st_checked( $this->st_settings['order'], array( 'DESC' ) )); ?> type="radio" value="DESC" name="<?php echo esc_attr( $this->option_key_name); ?>[order]" /><?php esc_html_e( 'Descending', 'search-tools' ); ?></label>
+		<label><input <?php echo esc_attr($this->st_checked( $this->st_settings['order'], array( 'ASC' ) )); ?> type="radio" value="ASC" name="<?php echo esc_attr($this->option_key_name); ?>[order]" /><?php esc_html_e( 'Ascending', 'search-tools' ); ?></label>
+		<p class="description"><?php esc_html_e( 'Order the sorted search items in Descending or Ascending. Default is Descending.', 'search-tools' ); ?></p>
 		<?php
 	}
 
@@ -534,9 +534,9 @@ class ExtendOptions {
 	 */
 	public function st_exact_search() {
 		?>
-		<label><input <?php echo $this->st_checked( $this->st_settings['exact_match'], array( 'yes' ) ); ?> type="radio" value="yes" name="<?php echo $this->option_key_name; ?>[exact_match]" /><?php _e( 'Yes', 'search-tools' ); ?></label>
-		<label><input <?php echo $this->st_checked( $this->st_settings['exact_match'], array( 'no' ) ); ?> type="radio" value="no" name="<?php echo $this->option_key_name; ?>[exact_match]" /><?php _e( 'No', 'search-tools' ); ?></label>
-		<p class="description"><?php _e( 'Whether to match search term exactly or partially e.g. If someone search "Word" it will display items matching "WordPress" or "Word" but if you select Yes then it will display items only matching "Word". The default value is No.', 'search-tools' ); ?></p>
+		<label><input <?php esc_attr_e($this->st_checked( $this->st_settings['exact_match'], array( 'yes' ) )); ?> type="radio" value="yes" name="<?php esc_attr_e($this->option_key_name); ?>[exact_match]" /><?php esc_html_e( 'Yes', 'search-tools' ); ?></label>
+		<label><input <?php esc_attr_e($this->st_checked( $this->st_settings['exact_match'], array( 'no' ) )); ?> type="radio" value="no" name="<?php esc_attr_e($this->option_key_name); ?>[exact_match]" /><?php esc_html_e( 'No', 'search-tools' ); ?></label>
+		<p class="description"><?php esc_html_e( 'Whether to match search term exactly or partially e.g. If someone search "Word" it will display items matching "WordPress" or "Word" but if you select Yes then it will display items only matching "Word". The default value is No.', 'search-tools' ); ?></p>
 		<?php
 	}
 
@@ -556,18 +556,18 @@ class ExtendOptions {
 	 */
 	public function st_media_types() {
 		?>
-		<select multiple="multiple" class="st-select2" name="<?php echo $this->option_key_name; ?>[media_types][]">
+		<select multiple="multiple" class="st-select2" name="<?php esc_attr_e($this->option_key_name); ?>[media_types][]">
 			<?php
 			foreach ( (array) get_allowed_mime_types() as $ext => $type ) {
 				?>
-				<option <?php echo $this->st_checked( $type, $this->st_settings['media_types'], true ); ?> value="<?php echo esc_attr( $type ); ?>" >
-					<?php echo $ext; ?>
+				<option <?php esc_attr_e($this->st_checked( $type, $this->st_settings['media_types'], true )); ?> value="<?php echo esc_attr( $type ); ?>" >
+					<?php echo esc_html($ext); ?>
 				</option>
 				<?php
 			}
 			?>
 		</select>
-		<p class="description"><?php _e( 'Select the media types to limit the results by type. Leave blank to search all media types.', 'search-tools' ); ?></p>
+		<p class="description"><?php esc_html_e( 'Select the media types to limit the results by type. Leave blank to search all media types.', 'search-tools' ); ?></p>
 		<?php
 	}
 

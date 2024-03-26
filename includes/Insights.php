@@ -67,8 +67,8 @@ class Insights
 	public function add_menu_page() {
 		add_submenu_page(
 			'wp-search-tools',
-			__( 'Insights', 'search-tools' ),
-			__( 'Insights', 'search-tools' ),
+			esc_html__( 'Insights', 'search-tools' ),
+			esc_html__( 'Insights', 'search-tools' ),
 			'manage_options',
 			'search-tools-insights',
 			[$this, 'search_insights_content'],
@@ -135,14 +135,14 @@ class Insights
 							<?php esc_html_e( 'Search Insights', 'search-tools' ); ?>
 						</h1>
 						
-						<a href="?page=search-tools-insights&tab=all_users" class="st-header-navitem <?php if($tab==='all_users'):?>is-active<?php endif; ?>"><?php _e("All Users", "search-tools"); ?></a>
-						<a href="?page=search-tools-insights&tab=logged_in" class="st-header-navitem <?php if($tab==='logged_in'):?>is-active<?php endif; ?>"><?php _e("Logged in", "search-tools"); ?></a>
-						<a href="?page=search-tools-insights&tab=guests" class="st-header-navitem <?php if($tab==='guests'):?>is-active<?php endif; ?>"><?php _e("Guests", "search-tools"); ?></a>
+						<a href="?page=search-tools-insights&tab=all_users" class="st-header-navitem <?php if($tab==='all_users'):?>is-active<?php endif; ?>"><?php esc_html_e("All Users", "search-tools"); ?></a>
+						<a href="?page=search-tools-insights&tab=logged_in" class="st-header-navitem <?php if($tab==='logged_in'):?>is-active<?php endif; ?>"><?php esc_html_e("Logged in", "search-tools"); ?></a>
+						<a href="?page=search-tools-insights&tab=guests" class="st-header-navitem <?php if($tab==='guests'):?>is-active<?php endif; ?>"><?php esc_html_e("Guests", "search-tools"); ?></a>
 					</div>
 						
 					<div style="display:none;">
-						<a class="st-btn" href="#" target="_blank"><?php _e("support", "search-tools"); ?></a>
-						<a class="st-btn st-btn-primary" href="#" target="_blank"><?php _e("upgrade to pro", "search-tools"); ?></a>
+						<a class="st-btn" href="#" target="_blank"><?php esc_html_e("support", "search-tools"); ?></a>
+						<a class="st-btn st-btn-primary" href="#" target="_blank"><?php esc_html_e("upgrade to pro", "search-tools"); ?></a>
 					</div>
 				</div>
 								
@@ -486,9 +486,9 @@ class Insights
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>" . __('query', 'search-tools') . "</th>
-						<th class='st-searches-cell st-text-center'>" . __('searched', 'search-tools') . "</th>
-						<th class='st-text-center'>" . __('results', 'search-tools') . "</th>
+						<th>" . esc_html__('query', 'search-tools') . "</th>
+						<th class='st-searches-cell st-text-center'>" . esc_html__('searched', 'search-tools') . "</th>
+						<th class='st-text-center'>" . esc_html__('results', 'search-tools') . "</th>
 					</tr>
 				<thead>	
 			</table>
@@ -514,11 +514,11 @@ class Insights
      */
 	private function html_builder($data)
 	{
-		$today_html = $this->html_helper($data["today"], __("Today", "search-tools"));
-		$last_7_days_html = $this->html_helper($data["last_7_days"], __("Last 7 days", "search-tools"));
-		$last_30_days_html = $this->html_helper($data["last_30_days"], __("Last 30 days", "search-tools"));
-		$this_year_html = $this->html_helper($data["this_year"], __("This year", "search-tools"));
-		$overal_html = $this->html_helper($data["overall"], __("Overall", "search-tools"));
+		$today_html = $this->html_helper($data["today"], esc_html__("Today", "search-tools"));
+		$last_7_days_html = $this->html_helper($data["last_7_days"], esc_html__("Last 7 days", "search-tools"));
+		$last_30_days_html = $this->html_helper($data["last_30_days"], esc_html__("Last 30 days", "search-tools"));
+		$this_year_html = $this->html_helper($data["this_year"], esc_html__("This year", "search-tools"));
+		$overal_html = $this->html_helper($data["overall"], esc_html__("Overall", "search-tools"));
 
 		if( file_exists( SEARCH_TOOLS_PLUGIN_DIR_PATH . "/templates/tools-statistics.php" ) ){
 			require_once( SEARCH_TOOLS_PLUGIN_DIR_PATH . "/templates/tools-statistics.php" );
