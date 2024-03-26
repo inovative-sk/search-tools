@@ -187,7 +187,7 @@ class Insights
 		
 		$today = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT query, count(*) AS query_count, count_total_results
+				"SELECT query, count(*) AS query_count, MAX(count_total_results) AS count_total_results
 				FROM %i
 				WHERE created_at > DATE(NOW())
 				GROUP BY query
@@ -199,7 +199,7 @@ class Insights
 
 		$last_7_days = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT query, count(*) AS query_count, count_total_results
+				"SELECT query, count(*) AS query_count, MAX(count_total_results) AS count_total_results
 				FROM %i
 				WHERE created_at >= DATE_ADD(CURDATE(), INTERVAL -7 DAY)
 				GROUP BY query
@@ -211,7 +211,7 @@ class Insights
 
 		$last_30_days = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT query, count(*) AS query_count, count_total_results
+				"SELECT query, count(*) AS query_count, MAX(count_total_results) AS count_total_results
 				FROM %i
 				WHERE created_at >= DATE_ADD(CURDATE(), INTERVAL -30 DAY)
 				GROUP BY query
@@ -225,7 +225,7 @@ class Insights
 		$next_year = date('Y', strtotime('+1 year'));
 		$this_year = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT query, count(*) AS query_count, count_total_results
+				"SELECT query, count(*) AS query_count, MAX(count_total_results) AS count_total_results
 				FROM %i
 				WHERE `created_at` >= '%d-01-01 00:00:00' AND `created_at` < '%d-01-01 00:00:00'
 				GROUP BY `query`
@@ -239,7 +239,7 @@ class Insights
 
 		$overall = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT query, count(*) AS query_count, count_total_results
+				"SELECT query, count(*) AS query_count, MAX(count_total_results) AS count_total_results
 				FROM %i
 				GROUP BY query
 				ORDER BY query_count DESC, query ASC LIMIT %d",
@@ -272,7 +272,7 @@ class Insights
 
 		$today = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT query, count(*) AS query_count, count_total_results
+				"SELECT query, count(*) AS query_count, MAX(count_total_results) AS count_total_results
 				FROM %i
 				WHERE user_roles!='' AND user_roles!='GUEST' AND created_at > DATE(NOW())
 				GROUP BY query ORDER BY query_count DESC, query ASC LIMIT %d",
@@ -283,7 +283,7 @@ class Insights
 
 		$overall = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT query, count(*) AS query_count, count_total_results
+				"SELECT query, count(*) AS query_count, MAX(count_total_results) AS count_total_results
 				FROM %i
 				WHERE user_roles!='' AND user_roles!='GUEST'
 				GROUP BY query
@@ -295,7 +295,7 @@ class Insights
 		
 		$last_7_days = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT query, count(*) AS query_count, count_total_results
+				"SELECT query, count(*) AS query_count, MAX(count_total_results) AS count_total_results
 				FROM %i
 				WHERE user_roles!='' AND user_roles!='GUEST' AND created_at >= DATE_ADD(CURDATE(), INTERVAL -7 DAY)
 				GROUP BY query
@@ -307,7 +307,7 @@ class Insights
 
 		$last_30_days = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT query, count(*) AS query_count, count_total_results
+				"SELECT query, count(*) AS query_count, MAX(count_total_results) AS count_total_results
 				FROM %i
 				WHERE user_roles!='' AND user_roles!='GUEST' AND created_at >= DATE_ADD(CURDATE(), INTERVAL -30 DAY)
 				GROUP BY query
@@ -321,7 +321,7 @@ class Insights
 		$next_year = date('Y', strtotime('+1 year'));
 		$this_year = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT query, count(*) AS query_count, count_total_results
+				"SELECT query, count(*) AS query_count, MAX(count_total_results) AS count_total_results
 				FROM %i
 				WHERE user_roles!='' AND user_roles!='GUEST' AND `created_at` >= '%d-01-01 00:00:00' AND `created_at` < '%d-01-01 00:00:00'
 				GROUP BY `query`
@@ -357,7 +357,7 @@ class Insights
 
         $overall = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT query, count(*) AS query_count, count_total_results
+				"SELECT query, count(*) AS query_count, MAX(count_total_results) AS count_total_results
 				FROM %i
 				WHERE user_roles='GUEST'
 				GROUP BY query
@@ -369,7 +369,7 @@ class Insights
 
 		$today = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT query, count(*) AS query_count, count_total_results
+				"SELECT query, count(*) AS query_count, MAX(count_total_results) AS count_total_results
 				FROM %i
 				WHERE user_roles='GUEST' AND created_at > DATE(NOW())
 				GROUP BY query
@@ -381,7 +381,7 @@ class Insights
 
 		$last_7_days = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT query, count(*) AS query_count, count_total_results
+				"SELECT query, count(*) AS query_count, MAX(count_total_results) AS count_total_results
 				FROM %i
 				WHERE user_roles='GUEST' AND created_at >= DATE_ADD(CURDATE(), INTERVAL -7 DAY)
 				GROUP BY query
@@ -393,7 +393,7 @@ class Insights
 
 		$last_30_days = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT query, count(*) AS query_count, count_total_results
+				"SELECT query, count(*) AS query_count, MAX(count_total_results) AS count_total_results
 				FROM %i
 				WHERE user_roles='GUEST' AND created_at >= DATE_ADD(CURDATE(), INTERVAL -30 DAY)
 				GROUP BY query
@@ -407,7 +407,7 @@ class Insights
 		$next_year = date('Y', strtotime('+1 year'));
 		$this_year = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT query, count(*) AS query_count, count_total_results
+				"SELECT query, count(*) AS query_count, MAX(count_total_results) AS count_total_results
 				FROM %i
 				WHERE user_roles='GUEST' AND `created_at` >= '%d-01-01 00:00:00' AND `created_at` < '%d-01-01 00:00:00'
 				GROUP BY `query`
