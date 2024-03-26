@@ -88,10 +88,10 @@ class Activate
      */
     private function save_plugin_data()
     {
-        global $st_db_version;
-        $st_db_version = '1.0';
+        global $seto_db_version;
+        $seto_db_version = '1.0';
 
-        add_option( 'st_db_version', $st_db_version, '', false );
+        add_option( 'seto_db_version', $seto_db_version, '', false );
 
         add_option('search_tools_plugin_activation_date', current_time('mysql', false), '', false);
     }

@@ -113,12 +113,12 @@ if( file_exists( SEARCH_TOOLS_INCLUDES_PATH . "/Activate.php" ) ){
 /**
  * Init the plugin.
  */
-if ( ! class_exists( 'SearchTools' ) ) {
+if ( ! class_exists( 'SETO_SearchTools' ) ) {
 
 	/**
 	 * The main SearchTools class
 	 */
-	class SearchTools {
+	class SETO_SearchTools {
 
 		/**
 		 * The plugin version number.
@@ -201,26 +201,26 @@ if ( ! class_exists( 'SearchTools' ) ) {
 			}
 		}
 
-	} // class SearchTools
+	} // class SETO_SearchTools
 
 	/**
 	 *
 	 * @since   1.0.0
 	 *
-	 * @return  SearchTools
+	 * @return  SETO_SearchTools
 	 */
-	function search_tools() {
-		global $search_tools;
+	function seto_search_tools() {
+		global $seto_search_tools;
 
 		// Instantiate only once.
-		if ( ! isset( $search_tools ) ) {
-			$search_tools = new SearchTools();
-			$search_tools->init();
+		if ( ! isset( $seto_search_tools ) ) {
+			$seto_search_tools = new SETO_SearchTools();
+			$seto_search_tools->init();
 		}
-		return $search_tools;
+		return $seto_search_tools;
 	}
 
 	// Init.
-	search_tools();
+	seto_search_tools();
 
 } // class_exists check
