@@ -231,8 +231,16 @@ class ExtendOptions {
 		 * @param string SQL query.
 		 */
 		// phpcs:ignore
-		$fields = $wpdb->get_results( apply_filters( 'st_meta_keys_query', "select DISTINCT meta_key from $wpdb->postmeta where meta_key NOT LIKE '\_%' ORDER BY meta_key ASC" ) );
-		$meta_keys    = array();
+		$fields = $wpdb->get_results(
+			$wpdb->prepare(
+				"SELECT DISTINCT meta_key
+				FROM $wpdb->postmeta
+				WHERE meta_key NOT LIKE %s
+				ORDER BY meta_key ASC",
+				"\_%"
+			)
+		);
+		$meta_keys = array();
 
 		if ( is_array( $fields ) && ! empty( $fields ) ) {
 			foreach ( $fields as $field ) {
