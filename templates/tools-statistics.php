@@ -30,8 +30,8 @@
     <?php endif; ?>
     
     <?php if( $this_year_html ): ?>
-    <div class="st-stats">
-        <?php echo wp_kses_post($this_year_html); ?>
-    </div>    
+        <div class="st-stats">
+            <?php echo wp_kses_post($this_year_html); ?>
+        </div>    
     <?php endif; ?>
 </div>
