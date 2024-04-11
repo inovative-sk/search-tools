@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-class Plugin
+class SETO_Plugin
 {
     /**
 	 * Static property to hold our singleton instance
@@ -35,7 +35,7 @@ class Plugin
 	 *
      * @since   1.0.0
      * 
-	 * @return Plugin
+	 * @return SETO_Plugin
 	 */
 	public static function init() {
 
@@ -91,7 +91,7 @@ class Plugin
         global $wpdb;
 
         $wpdb->insert(
-            SEARCH_TOOLS_DB_TABLE,
+            SETO_DB_TABLE,
             [
                 'query' => $query,
                 'user_roles' => $user_roles,

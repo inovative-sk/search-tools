@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class DashboardWidget
+class SETO_DashboardWidget
 {
     /**
 	 * Static property to hold our singleton instance
@@ -45,7 +45,7 @@ class DashboardWidget
 	 *
 	 * @since   1.0.0
      * 
-	 * @return DashboardWidget
+	 * @return SETO_DashboardWidget
 	 */
 	public static function init() {
 
@@ -87,7 +87,7 @@ class DashboardWidget
 				WHERE created_at > DATE(NOW())
 				GROUP BY query
 				ORDER BY query_count DESC, query ASC LIMIT %d",
-				SEARCH_TOOLS_DB_TABLE,
+				SETO_DB_TABLE,
 				$this->results_limit
 			)
 		);
@@ -100,7 +100,7 @@ class DashboardWidget
 				WHERE created_at >= DATE_ADD(CURDATE(), INTERVAL -7 DAY)
 				GROUP BY query
 				ORDER BY query_count DESC, query ASC LIMIT %d",
-				SEARCH_TOOLS_DB_TABLE,
+				SETO_DB_TABLE,
 				$this->results_limit
 			)
 		);
@@ -112,7 +112,7 @@ class DashboardWidget
 				FROM %i
 				GROUP BY query
 				ORDER BY query_count DESC, query ASC LIMIT %d",
-				SEARCH_TOOLS_DB_TABLE,
+				SETO_DB_TABLE,
 				$this->results_limit
 			)
 		);
@@ -130,8 +130,8 @@ class DashboardWidget
             $overall_html .= $this->list_item_helper($key, $result);
         }
 
-		if( file_exists( SEARCH_TOOLS_PLUGIN_DIR_PATH . "/templates/dashboard-widget.php" ) ){
-			require_once( SEARCH_TOOLS_PLUGIN_DIR_PATH . "/templates/dashboard-widget.php" );
+		if( file_exists( SETO_PLUGIN_DIR_PATH . "/templates/dashboard-widget.php" ) ){
+			require_once( SETO_PLUGIN_DIR_PATH . "/templates/dashboard-widget.php" );
 		}
     }
 

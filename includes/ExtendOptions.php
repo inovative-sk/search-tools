@@ -13,13 +13,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Register option page an other hooks.
  */
-class ExtendOptions {
+class SETO_ExtendOptions {
 
 	/**
 	 * Class instance.
 	 *
 	 * @since 2.0
-	 * @var ExtendOptions
+	 * @var SETO_ExtendOptions
 	 */
 	public static $instance = false;
 
@@ -63,7 +63,7 @@ class ExtendOptions {
 	 *
      * @since   1.0.0
      * 
-	 * @return ExtendOptions
+	 * @return SETO_ExtendOptions
 	 */
 	public static function init() {
 
@@ -115,7 +115,7 @@ class ExtendOptions {
 			esc_html__( 'Search Tools', 'search-tools' ),
 			'manage_options',
 			'wp-search-tools',
-			[$this, 'search_tools_content'],
+			[$this, 'seto_content'],
 			'dashicons-search',
 			50
 		);
@@ -130,7 +130,7 @@ class ExtendOptions {
 		);
 	}
 
-	public function search_tools_content(){ ?>
+	public function seto_content(){ ?>
 		<div class="wrap">
 			<h2><?php esc_html_e( 'WP Search Tools Plugin', 'search-tools' ); ?></h2>
 
@@ -205,13 +205,13 @@ class ExtendOptions {
 	public function enqueue_assets( $hook ) {
 		// Register scripts for main setting page.
 		if ( 'search-tools_page_search-tools-extend' === $hook ) {
-			wp_enqueue_style("search-tools-select2", SEARCH_TOOLS_ASSETS_URL . "external/select2/css/select2.min.css", false, "4.0.13", "all");
-			wp_enqueue_style( 'search-tools-jquery_ui', SEARCH_TOOLS_ASSETS_URL . 'jQueryUI/jquery-ui.min.css' );
-			wp_enqueue_style( 'search-tools-jquery_ui_theme', SEARCH_TOOLS_ASSETS_URL . 'jQueryUI/jquery-ui.theme.min.css' );
+			wp_enqueue_style("search-tools-select2", SETO_ASSETS_URL . "external/select2/css/select2.min.css", false, "4.0.13", "all");
+			wp_enqueue_style( 'search-tools-jquery_ui', SETO_ASSETS_URL . 'jQueryUI/jquery-ui.min.css' );
+			wp_enqueue_style( 'search-tools-jquery_ui_theme', SETO_ASSETS_URL . 'jQueryUI/jquery-ui.theme.min.css' );
 
 			wp_enqueue_script( 'jquery-ui-datepicker' );
-			wp_enqueue_script("search-tools-select2", SEARCH_TOOLS_ASSETS_URL . "external/select2/js/select2.full.min.js", ["jquery"], "4.0.13", ["in_footer" => true]);
-			wp_enqueue_script("search-tools-extend", SEARCH_TOOLS_ASSETS_URL . "js/search-tools.js", ["jquery"], "1.0.0", ["in_footer" => true]);
+			wp_enqueue_script("search-tools-select2", SETO_ASSETS_URL . "external/select2/js/select2.full.min.js", ["jquery"], "4.0.13", ["in_footer" => true]);
+			wp_enqueue_script("search-tools-extend", SETO_ASSETS_URL . "js/search-tools.js", ["jquery"], "1.0.0", ["in_footer" => true]);
 		} 
 	}
 
@@ -353,7 +353,7 @@ class ExtendOptions {
 		 * @param array arguments array.
 		 */
 		$tax_args = apply_filters(
-			'st_tax_args',
+			'seto_tax_args',
 			array(
 				'show_ui' => true,
 				'public'  => true,
@@ -366,7 +366,7 @@ class ExtendOptions {
 		 * @since 1.1
 		 * @param $all_taxonomies Array of taxonomies.
 		 */
-		$all_taxonomies = apply_filters( 'st_tax', get_taxonomies( $tax_args, 'objects' ) );
+		$all_taxonomies = apply_filters( 'seto_tax', get_taxonomies( $tax_args, 'objects' ) );
 		if ( is_array( $all_taxonomies ) && ! empty( $all_taxonomies ) ) {
 			?>
 			<select multiple="multiple" class="seto-select2" name="<?php echo esc_attr($this->option_key_name); ?>[taxonomies][]">

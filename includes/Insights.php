@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Insights
+class SETO_Insights
 {
     /**
 	 * Static property to hold our singleton instance
@@ -45,7 +45,7 @@ class Insights
 	 *
 	 * @since   1.0.0
 	 * 
-	 * @return ToolsInsights
+	 * @return SETO_ToolsInsights
 	 */
 	public static function init() {
 
@@ -95,7 +95,7 @@ class Insights
 					FROM %i
 					WHERE created_at >= DATE_ADD(CURDATE(), INTERVAL -90 DAY)
 					GROUP BY DATE(created_at)",
-					SEARCH_TOOLS_DB_TABLE
+					SETO_DB_TABLE
 				)								
 			);								
 		} elseif( $tab === "logged_in" ) {
@@ -105,7 +105,7 @@ class Insights
 					FROM %i
 					WHERE user_roles!='' AND user_roles!='GUEST' AND created_at >= DATE_ADD(CURDATE(), INTERVAL -90 DAY)
 					GROUP BY DATE(created_at)",
-					SEARCH_TOOLS_DB_TABLE
+					SETO_DB_TABLE
 				)
 			);
 		} elseif( $tab === "guests" ) {
@@ -115,7 +115,7 @@ class Insights
 					FROM %i
 					WHERE user_roles='GUEST' AND created_at >= DATE_ADD(CURDATE(), INTERVAL -90 DAY)
 					GROUP BY DATE(created_at)",
-					SEARCH_TOOLS_DB_TABLE
+					SETO_DB_TABLE
 				)
 			);
 		}
@@ -148,12 +148,12 @@ class Insights
 								
 
 				<?php
-					if( file_exists( SEARCH_TOOLS_PLUGIN_DIR_PATH . "/templates/tools-chart.php" ) ){
-						require_once( SEARCH_TOOLS_PLUGIN_DIR_PATH . "/templates/tools-chart.php" );
+					if( file_exists( SETO_PLUGIN_DIR_PATH . "/templates/tools-chart.php" ) ){
+						require_once( SETO_PLUGIN_DIR_PATH . "/templates/tools-chart.php" );
 					}
 
-					if( !empty($day_counts) && file_exists( SEARCH_TOOLS_PLUGIN_DIR_PATH . "/templates/tools-premium.php" ) ){
-						require_once( SEARCH_TOOLS_PLUGIN_DIR_PATH . "/templates/tools-premium.php" );
+					if( !empty($day_counts) && file_exists( SETO_PLUGIN_DIR_PATH . "/templates/tools-premium.php" ) ){
+						require_once( SETO_PLUGIN_DIR_PATH . "/templates/tools-premium.php" );
 					}					
 				?>
 
@@ -192,7 +192,7 @@ class Insights
 				WHERE created_at > DATE(NOW())
 				GROUP BY query
 				ORDER BY query_count DESC, query ASC LIMIT %d",
-				SEARCH_TOOLS_DB_TABLE,
+				SETO_DB_TABLE,
 				$this->results_limit
 			)
 		);
@@ -204,7 +204,7 @@ class Insights
 				WHERE created_at >= DATE_ADD(CURDATE(), INTERVAL -7 DAY)
 				GROUP BY query
 				ORDER BY query_count DESC, query ASC LIMIT %d",
-				SEARCH_TOOLS_DB_TABLE,
+				SETO_DB_TABLE,
 				$this->results_limit
 			)
 		);
@@ -216,7 +216,7 @@ class Insights
 				WHERE created_at >= DATE_ADD(CURDATE(), INTERVAL -30 DAY)
 				GROUP BY query
 				ORDER BY query_count DESC, query ASC LIMIT %d",
-				SEARCH_TOOLS_DB_TABLE,
+				SETO_DB_TABLE,
 				$this->results_limit
 			)
 		);
@@ -230,7 +230,7 @@ class Insights
 				WHERE `created_at` >= '%d-01-01 00:00:00' AND `created_at` < '%d-01-01 00:00:00'
 				GROUP BY `query`
 				ORDER BY query_count DESC, query ASC LIMIT %d;",
-				SEARCH_TOOLS_DB_TABLE,
+				SETO_DB_TABLE,
 				$current_year,
 				$next_year,
 				$this->results_limit
@@ -243,7 +243,7 @@ class Insights
 				FROM %i
 				GROUP BY query
 				ORDER BY query_count DESC, query ASC LIMIT %d",
-				SEARCH_TOOLS_DB_TABLE,
+				SETO_DB_TABLE,
 				$this->results_limit
 			)
 		);
@@ -280,7 +280,7 @@ class Insights
 				FROM %i
 				WHERE user_roles!='' AND user_roles!='GUEST' AND created_at > DATE(NOW())
 				GROUP BY query ORDER BY query_count DESC, query ASC LIMIT %d",
-				SEARCH_TOOLS_DB_TABLE,
+				SETO_DB_TABLE,
 				$this->results_limit
 			)
 		);
@@ -292,7 +292,7 @@ class Insights
 				WHERE user_roles!='' AND user_roles!='GUEST'
 				GROUP BY query
 				ORDER BY query_count DESC, query ASC LIMIT %d",
-				SEARCH_TOOLS_DB_TABLE,
+				SETO_DB_TABLE,
 				$this->results_limit
 			)
 		);
@@ -304,7 +304,7 @@ class Insights
 				WHERE user_roles!='' AND user_roles!='GUEST' AND created_at >= DATE_ADD(CURDATE(), INTERVAL -7 DAY)
 				GROUP BY query
 				ORDER BY query_count DESC, query ASC LIMIT %d",
-				SEARCH_TOOLS_DB_TABLE,
+				SETO_DB_TABLE,
 				$this->results_limit
 			)
 		);
@@ -316,7 +316,7 @@ class Insights
 				WHERE user_roles!='' AND user_roles!='GUEST' AND created_at >= DATE_ADD(CURDATE(), INTERVAL -30 DAY)
 				GROUP BY query
 				ORDER BY query_count DESC, query ASC LIMIT %d",
-				SEARCH_TOOLS_DB_TABLE,
+				SETO_DB_TABLE,
 				$this->results_limit
 			)
 		);
@@ -330,7 +330,7 @@ class Insights
 				WHERE user_roles!='' AND user_roles!='GUEST' AND `created_at` >= '%d-01-01 00:00:00' AND `created_at` < '%d-01-01 00:00:00'
 				GROUP BY `query`
 				ORDER BY query_count DESC, query ASC LIMIT %d;",
-				SEARCH_TOOLS_DB_TABLE,
+				SETO_DB_TABLE,
 				$current_year,
 				$next_year,
 				$this->results_limit
@@ -370,7 +370,7 @@ class Insights
 				WHERE user_roles='GUEST'
 				GROUP BY query
 				ORDER BY query_count DESC, query ASC LIMIT %d",
-				SEARCH_TOOLS_DB_TABLE,
+				SETO_DB_TABLE,
 				$this->results_limit
 			)
 		);
@@ -382,7 +382,7 @@ class Insights
 				WHERE user_roles='GUEST' AND created_at > DATE(NOW())
 				GROUP BY query
 				ORDER BY query_count DESC, query ASC LIMIT %d",
-				SEARCH_TOOLS_DB_TABLE,
+				SETO_DB_TABLE,
 				$this->results_limit
 			)
 		);
@@ -394,7 +394,7 @@ class Insights
 				WHERE user_roles='GUEST' AND created_at >= DATE_ADD(CURDATE(), INTERVAL -7 DAY)
 				GROUP BY query
 				ORDER BY query_count DESC, query ASC LIMIT %d",
-				SEARCH_TOOLS_DB_TABLE,
+				SETO_DB_TABLE,
 				$this->results_limit
 			)
 		);
@@ -406,7 +406,7 @@ class Insights
 				WHERE user_roles='GUEST' AND created_at >= DATE_ADD(CURDATE(), INTERVAL -30 DAY)
 				GROUP BY query
 				ORDER BY query_count DESC, query ASC LIMIT %d",
-				SEARCH_TOOLS_DB_TABLE,
+				SETO_DB_TABLE,
 				$this->results_limit
 			)
 		);
@@ -420,7 +420,7 @@ class Insights
 				WHERE user_roles='GUEST' AND `created_at` >= '%d-01-01 00:00:00' AND `created_at` < '%d-01-01 00:00:00'
 				GROUP BY `query`
 				ORDER BY query_count DESC, query ASC LIMIT %d;",
-				SEARCH_TOOLS_DB_TABLE,
+				SETO_DB_TABLE,
 				$current_year,
 				$next_year,
 				$this->results_limit
@@ -532,8 +532,8 @@ class Insights
 		$this_year_html = $this->html_helper($data["this_year"], esc_html__("This year", "search-tools"));
 		$overal_html = $this->html_helper($data["overall"], esc_html__("Overall", "search-tools"));
 
-		if( file_exists( SEARCH_TOOLS_PLUGIN_DIR_PATH . "/templates/tools-statistics.php" ) ){
-			require_once( SEARCH_TOOLS_PLUGIN_DIR_PATH . "/templates/tools-statistics.php" );
+		if( file_exists( SETO_PLUGIN_DIR_PATH . "/templates/tools-statistics.php" ) ){
+			require_once( SETO_PLUGIN_DIR_PATH . "/templates/tools-statistics.php" );
 		}
 	}
 

@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Activate
+class SETO_Activate
 {
     /**
 	 * Static property to hold our singleton instance
@@ -36,7 +36,7 @@ class Activate
 	 *
      * @since   1.0.0
      * 
-	 * @return Activate
+	 * @return SETO_Activate
 	 */
 	public static function init() {
 
@@ -61,7 +61,7 @@ class Activate
         
         $charset_collate = $wpdb->get_charset_collate();
         
-        $table_queries = SEARCH_TOOLS_DB_TABLE;
+        $table_queries = SETO_DB_TABLE;
         
         $sql_create_table_queries = "CREATE TABLE IF NOT EXISTS $table_queries (
             id mediumint(9) NOT NULL AUTO_INCREMENT,
@@ -93,7 +93,7 @@ class Activate
 
         add_option( 'seto_db_version', $seto_db_version, '', false );
 
-        add_option('search_tools_plugin_activation_date', current_time('mysql', false), '', false);
+        add_option('seto_plugin_activation_date', current_time('mysql', false), '', false);
     }
 
 }

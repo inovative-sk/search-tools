@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Extend {
+class SETO_Extend {
 
 	/**
 	 * Plugin settings.
@@ -32,7 +32,7 @@ class Extend {
 	 * Class instance.
 	 *
 	 * @since 2.0
-	 * @var Extend
+	 * @var SETO_Extend
 	 */
 	public static $instance = false;
 
@@ -68,7 +68,7 @@ class Extend {
 	 *
      * @since   1.0.0
      * 
-	 * @return Plugin
+	 * @return SETO_Extend
 	 */
 	public static function init() {
 
