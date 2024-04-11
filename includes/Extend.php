@@ -430,7 +430,7 @@ class SETO_Extend {
 	}
 
 	/**
-	 * Check if the query for the search and should be altered by WPES.
+	 * Check if the query for the search and should be altered.
 	 *
 	 * @since 2.0.2
 	 * @param WP_Query $query WP_Query object.
@@ -443,7 +443,7 @@ class SETO_Extend {
 			$query = $wp_query;
 		}
 
-		if ( ! empty( $query->is_search ) && ! empty( $query->get( 's' ) ) && empty( $query->get( 'suppress_filters' ) ) && empty( $query->get( 'disable_wpes' ) ) && ! $this->is_bbPress_search() ) {
+		if ( ! empty( $query->is_search ) && ! empty( $query->get( 's' ) ) && empty( $query->get( 'suppress_filters' ) ) && ! $this->is_bbPress_search() ) {
 
 			if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
 				return isset( $_REQUEST['wpessid'] ); // Only alter REST query results when wpessid is set.

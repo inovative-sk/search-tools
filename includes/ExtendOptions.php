@@ -542,10 +542,10 @@ class SETO_ExtendOptions {
 	public function exact_search() {
 		?>
 		<label>
-			<input <?php esc_attr($this->seto_checked( $this->seto_settings['exact_match'], array( 'yes' ) )); ?> type="radio" value="yes" name="<?php esc_attr($this->option_key_name); ?>[exact_match]" /><?php esc_html_e( 'Yes', 'search-tools' ); ?>
+			<input <?php echo esc_attr($this->seto_checked( $this->seto_settings['exact_match'], array( 'yes' ) )); ?> type="radio" value="yes" name="<?php echo esc_attr($this->option_key_name); ?>[exact_match]" /><?php esc_html_e( 'Yes', 'search-tools' ); ?>
 		</label>
 		<label>
-			<input <?php esc_attr($this->seto_checked( $this->seto_settings['exact_match'], array( 'no' ) )); ?> type="radio" value="no" name="<?php esc_attr($this->option_key_name); ?>[exact_match]" /><?php esc_html_e( 'No', 'search-tools' ); ?>
+			<input <?php echo esc_attr($this->seto_checked( $this->seto_settings['exact_match'], array( 'no' ) )); ?> type="radio" value="no" name="<?php echo esc_attr($this->option_key_name); ?>[exact_match]" /><?php esc_html_e( 'No', 'search-tools' ); ?>
 		</label>
 
 		<p class="description"><?php esc_html_e( 'Whether to match search term exactly or partially e.g. If someone search "Word" it will display items matching "WordPress" or "Word" but if you select Yes then it will display items only matching "Word". The default value is No.', 'search-tools' ); ?></p>
