@@ -107,7 +107,7 @@ function seto_php_version_notice() {
  */
 if( file_exists( SETO_INCLUDES_PATH . "/Activate.php" ) ){
 	require_once SETO_INCLUDES_PATH . '/Activate.php';
-	register_activation_hook( __FILE__, ['\seto_SearchTools\SETO_Activate', 'init'] );
+	register_activation_hook( __FILE__, ['\SearchToolsPlugin\SETO_Activate', 'init'] );
 }
 
 /**
@@ -167,20 +167,20 @@ if ( ! class_exists( 'SETO_SearchTools' ) ) {
 			if( file_exists( SETO_INCLUDES_PATH . "Plugin.php" ) ){
 				require_once SETO_INCLUDES_PATH . 'Plugin.php';
 				
-				\seto_SearchTools\SETO_Plugin::init();
+				\SearchToolsPlugin\SETO_Plugin::init();
 			}
 
 			if( file_exists( SETO_INCLUDES_PATH . "Extend.php" ) ){
 				require_once SETO_INCLUDES_PATH . 'Extend.php';
 				
-				\seto_SearchTools\SETO_Extend::init();
+				\SearchToolsPlugin\SETO_Extend::init();
 			}
 			
 			if( file_exists( SETO_INCLUDES_PATH . "DashboardWidget.php" ) ){
 				require_once SETO_INCLUDES_PATH . 'DashboardWidget.php';
 
 				if( is_admin() ){
-					\seto_SearchTools\SETO_DashboardWidget::init();
+					\SearchToolsPlugin\SETO_DashboardWidget::init();
 				}
 			}
 			
@@ -188,7 +188,7 @@ if ( ! class_exists( 'SETO_SearchTools' ) ) {
 				require_once  SETO_INCLUDES_PATH . 'Insights.php';
 
 				if( is_admin() ){
-					\seto_SearchTools\SETO_Insights::init();
+					\SearchToolsPlugin\SETO_Insights::init();
 				}
 			}
 
@@ -196,7 +196,7 @@ if ( ! class_exists( 'SETO_SearchTools' ) ) {
 				require_once SETO_INCLUDES_PATH . 'ExtendOptions.php';
 
 				if( is_admin() ){
-					\seto_SearchTools\SETO_ExtendOptions::init();
+					\SearchToolsPlugin\SETO_ExtendOptions::init();
 				}
 			}
 		}
