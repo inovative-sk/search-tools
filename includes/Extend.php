@@ -221,7 +221,7 @@ class Extend {
 		 * @since 1.2
 		 * @param NULL
 		 */
-		$terms_relation_type = apply_filters( 'wp_es_terms_relation_type', null );
+		$terms_relation_type = apply_filters( 'seto_terms_relation_type', null );
 
 		if ( ! in_array( $terms_relation_type, array( 'AND', 'OR' ), true ) ) {
 			$terms_relation_type = ( intval( $this->seto_settings['terms_relation'] ) === 2 ) ? 'OR' : 'AND';

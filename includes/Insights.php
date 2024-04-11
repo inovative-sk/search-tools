@@ -256,7 +256,11 @@ class Insights
 			'overall' => $overall,
 		];
 
-		echo $this->html_builder($data);
+		$html = $this->html_builder($data);
+		
+		if( $html ) {
+			echo wp_kses_post($html);
+		}
 	}
 
 	/**
@@ -341,7 +345,11 @@ class Insights
 			'overall' => $overall,
 		];
 
-		echo $this->html_builder($data);
+		$html = $this->html_builder($data);
+		
+		if( $html ) {
+			echo wp_kses_post($html);
+		}
 	}
 
 	/**
@@ -427,7 +435,11 @@ class Insights
 			'overall' => $overall,
 		];
 
-		echo $this->html_builder($data);	
+		$html = $this->html_builder($data);
+		
+		if( $html ) {
+			echo wp_kses_post($html);
+		}
 	}
 
 	/**

@@ -541,8 +541,13 @@ class ExtendOptions {
 	 */
 	public function exact_search() {
 		?>
-		<label><input <?php esc_attr_e($this->seto_checked( $this->seto_settings['exact_match'], array( 'yes' ) )); ?> type="radio" value="yes" name="<?php esc_attr_e($this->option_key_name); ?>[exact_match]" /><?php esc_html_e( 'Yes', 'search-tools' ); ?></label>
-		<label><input <?php esc_attr_e($this->seto_checked( $this->seto_settings['exact_match'], array( 'no' ) )); ?> type="radio" value="no" name="<?php esc_attr_e($this->option_key_name); ?>[exact_match]" /><?php esc_html_e( 'No', 'search-tools' ); ?></label>
+		<label>
+			<input <?php esc_attr($this->seto_checked( $this->seto_settings['exact_match'], array( 'yes' ) )); ?> type="radio" value="yes" name="<?php esc_attr($this->option_key_name); ?>[exact_match]" /><?php esc_html_e( 'Yes', 'search-tools' ); ?>
+		</label>
+		<label>
+			<input <?php esc_attr($this->seto_checked( $this->seto_settings['exact_match'], array( 'no' ) )); ?> type="radio" value="no" name="<?php esc_attr($this->option_key_name); ?>[exact_match]" /><?php esc_html_e( 'No', 'search-tools' ); ?>
+		</label>
+
 		<p class="description"><?php esc_html_e( 'Whether to match search term exactly or partially e.g. If someone search "Word" it will display items matching "WordPress" or "Word" but if you select Yes then it will display items only matching "Word". The default value is No.', 'search-tools' ); ?></p>
 		<?php
 	}
@@ -563,11 +568,11 @@ class ExtendOptions {
 	 */
 	public function media_types() {
 		?>
-		<select multiple="multiple" class="st-select2" name="<?php esc_attr_e($this->option_key_name); ?>[media_types][]">
+		<select multiple="multiple" class="st-select2" name="<?php esc_attr($this->option_key_name); ?>[media_types][]">
 			<?php
 			foreach ( (array) get_allowed_mime_types() as $ext => $type ) {
 				?>
-				<option <?php esc_attr_e($this->seto_checked( $type, $this->seto_settings['media_types'], true )); ?> value="<?php echo esc_attr( $type ); ?>" >
+				<option <?php esc_attr($this->seto_checked( $type, $this->seto_settings['media_types'], true )); ?> value="<?php echo esc_attr( $type ); ?>" >
 					<?php echo esc_html($ext); ?>
 				</option>
 				<?php
