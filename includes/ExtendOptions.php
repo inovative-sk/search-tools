@@ -1,5 +1,5 @@
 <?php
-namespace SearchTools;
+namespace seto_SearchTools;
 
 /*
 	This file is modified part of "WP Extended Search plugin" which is released under "GNU GENERAL PUBLIC LICENSE version 3".

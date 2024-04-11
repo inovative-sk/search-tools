@@ -1,5 +1,5 @@
 <?php
-namespace SearchTools;
+namespace seto_SearchTools;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
