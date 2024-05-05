@@ -3,7 +3,7 @@
 * Plugin Name: Search Tools
 * Plugin URI: https://www.wpsearchtools.com/
 * Description: Brings a bunch of useful tools to boost the search functionality. Extends default search engine and shows statistics what users look for.
-* Version: 1.0.0
+* Version: 1.0.1
 * Author: Peter Stehlik
 * Author URI: https://www.toptal.com/resume/peter-stehlik
 * Text Domain: search-tools
@@ -127,7 +127,7 @@ if ( ! class_exists( 'SETO_SearchTools' ) ) {
 		 * 
 		 * @var string
 		 */
-		public $version = '1.0.0';
+		public $version = '1.0.1';
 
 		/**
 		 * A dummy constructor to ensure SearchTools is only setup once.

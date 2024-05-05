@@ -2,9 +2,9 @@
 Contributors: stehlik
 Tags: search, search insights, search statistics, advanced search
 Requires at least: 6.2
-Tested up to: 6.4
+Tested up to: 6.5
 Requires PHP: 7.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -34,3 +34,11 @@ Free version of the plugin extends the default search engine. It allows searchin
 
 * [Website](https://www.wpsearchtools.com/)
 * [GitHub repository](https://github.com/inovative-sk/search-tools)
+
+== Screenshots ==
+
+1. Search Insights
+2. The Graph of the Searches
+3. Settings 
+4. How to Zoom the Graph
+5. Admin Menu Item
