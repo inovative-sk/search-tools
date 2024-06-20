@@ -18,7 +18,7 @@ class SETO_ExtendOptions {
 	/**
 	 * Class instance.
 	 *
-	 * @since 2.0
+	 * @since 1.0.0
 	 * @var SETO_ExtendOptions
 	 */
 	public static $instance = false;
@@ -26,7 +26,7 @@ class SETO_ExtendOptions {
 	/**
 	 * Plugin settings.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @var array
 	 */
 	private $seto_settings = '';
@@ -34,7 +34,7 @@ class SETO_ExtendOptions {
 	/**
 	 * Current setting option name.
 	 *
-	 * @since 2.0
+	 * @since 1.0.0
 	 * @var string
 	 */
 	private $option_key_name = 'seto_options';
@@ -42,7 +42,7 @@ class SETO_ExtendOptions {
 	/**
 	 * Default Constructor.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function __construct() {
 		// Load settings.
@@ -78,7 +78,7 @@ class SETO_ExtendOptions {
 	/**
 	 * Get Default options.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function default_options() {
 		$settings = array(
@@ -110,16 +110,6 @@ class SETO_ExtendOptions {
      * @return  void
      */
 	public function add_menu_page() {
-		add_menu_page(
-			esc_html__( 'Search Tools', 'search-tools' ),
-			esc_html__( 'Search Tools', 'search-tools' ),
-			'manage_options',
-			'wp-search-tools',
-			[$this, 'seto_content'],
-			'dashicons-search',
-			50
-		);
-
 		add_submenu_page(
 			'wp-search-tools',
 			esc_html__( 'Extend Search', 'search-tools' ),
@@ -130,22 +120,10 @@ class SETO_ExtendOptions {
 		);
 	}
 
-	public function seto_content(){ ?>
-		<div class="wrap">
-			<h2><?php esc_html_e( 'WP Search Tools Plugin', 'search-tools' ); ?></h2>
-
-			<p>
-				<?php esc_html_e( 'PRO version is yet to come. Check the website for more information', 'search-tools' ); ?>
-				<a href="https://www.wpsearchtools.com" target="_blank">wpsearchtools.com</a>
-			</p>
-		</div>
-	<?php
-	}
-
 	/**
 	 * Print options page content.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function extend_search_content(){ ?>
 		<div class="wrap">
@@ -168,7 +146,7 @@ class SETO_ExtendOptions {
 	/**
 	 * Add Section settings and settings fields
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function admin_init() {
 		// Register Settings.
@@ -191,7 +169,7 @@ class SETO_ExtendOptions {
 
 		add_settings_field( 'seto_exact_search', esc_html__( 'Match the search term exactly', 'search-tools' ), array( $this, 'exact_search' ), 'wp-st', 'seto_section_misc' );
 		add_settings_field( 'seto_exclude_older_results', esc_html__( 'Select date to exclude older results', 'search-tools' ), array( $this, 'exclude_results' ), 'wp-st', 'seto_section_misc', array( 'label_for' => 'st_exclude_date' ) );
-		add_settings_field( 'seto_number_of_posts', esc_html__( 'Posts per page', 'search-tools' ), array( $this, 'posts_per_page' ), 'wp-st', 'seto_section_misc', array( 'label_for' => 'es_posts_per_page' ) );
+		add_settings_field( 'seto_number_of_posts', esc_html__( 'Posts per page', 'search-tools' ), array( $this, 'posts_per_page' ), 'wp-st', 'seto_section_misc', array( 'label_for' => 'seto_posts_per_page' ) );
 		add_settings_field( 'seto_search_results_order', esc_html__( 'Search Results Order', 'search-tools' ), array( $this, 'search_results_order' ), 'wp-st', 'seto_section_misc', array( 'label_for' => 'search_results_order' ) );
 		add_settings_field( 'seto_media_types', esc_html__( 'Media Types', 'search-tools' ), array( $this, 'media_types' ), 'wp-st', 'seto_section_media' );
 	}
@@ -200,7 +178,7 @@ class SETO_ExtendOptions {
 	 * Enqueue admin style and scripts.
 	 *
 	 * @param string $hook Current page name.
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function enqueue_assets( $hook ) {
 		// Register scripts for main setting page.
@@ -211,14 +189,14 @@ class SETO_ExtendOptions {
 
 			wp_enqueue_script( 'jquery-ui-datepicker' );
 			wp_enqueue_script("search-tools-select2", SETO_ASSETS_URL . "external/select2/js/select2.full.min.js", ["jquery"], "4.0.13", ["in_footer" => true]);
-			wp_enqueue_script("search-tools-extend", SETO_ASSETS_URL . "js/search-tools.js", ["jquery"], "1.0.0", ["in_footer" => true]);
+			wp_enqueue_script("search-tools-extend", SETO_ASSETS_URL . "js/search-tools.js", ["jquery"], "1.0.0.0", ["in_footer" => true]);
 		} 
 	}
 
 	/**
 	 * Get all meta keys.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @global Object $wpdb WPDB object.
 	 * @return Array array of meta keys.
 	 */
@@ -253,7 +231,7 @@ class SETO_ExtendOptions {
 		/**
 		 * Filter results of SQL query for meta keys.
 		 *
-		 * @since 1.1
+		 * @since 1.0.0
 		 * @param array $meta_keys array of meta keys.
 		 */
 		return apply_filters( 'seto_meta_keys', $meta_keys );
@@ -295,7 +273,7 @@ class SETO_ExtendOptions {
 	/**
 	 * Default settings checkbox.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function title_content_checkbox() {
 		?>
@@ -316,7 +294,7 @@ class SETO_ExtendOptions {
 	/**
 	 * Meta keys checkboxes.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function custom_field_name_list() {
 		$meta_keys = $this->fields();
@@ -342,14 +320,14 @@ class SETO_ExtendOptions {
 	/**
 	 * Taxonomies checkbox.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function taxonomies_settings() {
 
 		/**
 		 * Filter taxonomies arguments.
 		 *
-		 * @since 1.0.1
+		 * @since 1.0.0
 		 * @param array arguments array.
 		 */
 		$tax_args = apply_filters(
@@ -363,7 +341,7 @@ class SETO_ExtendOptions {
 		/**
 		 * Filter taxonomy list return by get_taxonomies function.
 		 *
-		 * @since 1.1
+		 * @since 1.0.0
 		 * @param $all_taxonomies Array of taxonomies.
 		 */
 		$all_taxonomies = apply_filters( 'seto_tax', get_taxonomies( $tax_args, 'objects' ) );
@@ -391,7 +369,7 @@ class SETO_ExtendOptions {
 	/**
 	 * Author settings meta box.
 	 *
-	 * @since 1.1
+	 * @since 1.0.0
 	 */
 	public function author_settings() {
 		?>
@@ -405,14 +383,14 @@ class SETO_ExtendOptions {
 	/**
 	 * Post type checkboexes.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function post_types_settings() {
 
 		/**
 		 * Filter post type arguments.
 		 *
-		 * @since 1.0.1
+		 * @since 1.0.0
 		 * @param array arguments array.
 		 */
 		$post_types_args = apply_filters(
@@ -426,7 +404,7 @@ class SETO_ExtendOptions {
 		/**
 		 * Filter post type array return by get_post_types function.
 		 *
-		 * @since 1.1
+		 * @since 1.0.0
 		 * @param array $all_post_types Array of post types.
 		 */
 		$all_post_types = apply_filters( 'seto_post_types', get_post_types( $post_types_args, 'objects' ) );
@@ -460,7 +438,7 @@ class SETO_ExtendOptions {
 	/**
 	 * Terms relation type meta box.
 	 *
-	 * @since 1.1
+	 * @since 1.0.0
 	 */
 	public function terms_relation_type() {
 		?>
@@ -483,7 +461,7 @@ class SETO_ExtendOptions {
 	/**
 	 * Exclude older results.
 	 *
-	 * @since 1.0.2
+	 * @since 1.0.0
 	 */
 	public function exclude_results() {
 		?>
@@ -495,11 +473,11 @@ class SETO_ExtendOptions {
 	/**
 	 * Posts per search results page.
 	 *
-	 * @since 1.1
+	 * @since 1.0.0
 	 */
 	public function posts_per_page() {
 		?>
-		<input min="-1" class="small-text" type="number" value="<?php echo esc_attr( $this->seto_settings['posts_per_page'] ); ?>" name="<?php echo esc_attr($this->option_key_name); ?>[posts_per_page]" id="es_posts_per_page" />
+		<input min="-1" class="small-text" type="number" value="<?php echo esc_attr( $this->seto_settings['posts_per_page'] ); ?>" name="<?php echo esc_attr($this->option_key_name); ?>[posts_per_page]" id="seto_posts_per_page" />
 		<p class="description"><?php esc_html_e( 'Number of posts to display on search result page OR leave blank for default value.', 'search-tools' ); ?></p>
 		<?php
 	}
@@ -507,7 +485,7 @@ class SETO_ExtendOptions {
 	/**
 	 * Search results order.
 	 *
-	 * @since 1.3
+	 * @since 1.0.0
 	 */
 	public function search_results_order() {
 		?>
@@ -537,7 +515,7 @@ class SETO_ExtendOptions {
 	/**
 	 * Select exact or partial term matching.
 	 *
-	 * @since 1.3
+	 * @since 1.0.0
 	 */
 	public function exact_search() {
 		?>
@@ -555,7 +533,7 @@ class SETO_ExtendOptions {
 	/**
 	 * Section content before displaying search settings.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function section_content() {
 
@@ -564,7 +542,7 @@ class SETO_ExtendOptions {
 	/**
 	 * Select mime type.
 	 *
-	 * @since 2.1
+	 * @since 1.0.0
 	 */
 	public function media_types() {
 		?>
@@ -586,7 +564,7 @@ class SETO_ExtendOptions {
 	/**
 	 * Return checked or selected if value exist in array.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param mixed $value value to check against array.
 	 * @param array $array haystack array.
 	 * @param bool  $selected Set to <code>true</code> when using in select else <code>false</code>.
@@ -605,7 +583,7 @@ class SETO_ExtendOptions {
 	/**
 	 * Return disabled if both values are equal.
 	 *
-	 * @since 1.3
+	 * @since 1.0.0
 	 * @param mixed $first_value First value to compare.
 	 * @param mixed $second_value Second value to compare.
 	 * @return string disabled="disabled" or blank string.
@@ -621,7 +599,7 @@ class SETO_ExtendOptions {
 	/**
 	 * Get plugin options.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function seto_options() {
 

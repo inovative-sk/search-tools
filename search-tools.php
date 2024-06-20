@@ -3,7 +3,7 @@
 * Plugin Name: Search Tools
 * Plugin URI: https://www.wpsearchtools.com/
 * Description: Brings a bunch of useful tools to boost the search functionality. Extends default search engine and shows statistics what users look for.
-* Version: 1.0.1
+* Version: 1.1.0
 * Author: Peter Stehlik
 * Author URI: https://www.toptal.com/resume/peter-stehlik
 * Text Domain: search-tools
@@ -127,7 +127,7 @@ if ( ! class_exists( 'SETO_SearchTools' ) ) {
 		 * 
 		 * @var string
 		 */
-		public $version = '1.0.1';
+		public $version = '1.1.0';
 
 		/**
 		 * A dummy constructor to ensure SearchTools is only setup once.
@@ -143,6 +143,13 @@ if ( ! class_exists( 'SETO_SearchTools' ) ) {
 
 		}
 
+		/**
+		 * Enqueue JS & CSS assets only on admin pages where necessary
+		 *
+		 * @since   1.0.0
+		 *
+		 * @return  void
+		 */
 		public function enqueue_assets() {			
 			if( $GLOBALS['hook_suffix'] === "index.php" ){
 				wp_enqueue_style("search-tools-dashboard-widget", SETO_ASSETS_URL . "css/dashboard-widget.css", false, "1.0.1", "all");
@@ -175,7 +182,21 @@ if ( ! class_exists( 'SETO_SearchTools' ) ) {
 				
 				\SearchToolsPlugin\SETO_Extend::init();
 			}
+
+			if( file_exists( SETO_INCLUDES_PATH . "Highlight.php" ) ){
+				require_once SETO_INCLUDES_PATH . 'Highlight.php';
+				
+				\SearchToolsPlugin\SETO_Highlight::init();
+			}
 			
+			if( file_exists( SETO_INCLUDES_PATH . "OptionsPage.php" ) ){
+				require_once SETO_INCLUDES_PATH . 'OptionsPage.php';
+
+				if( is_admin() ){
+					\SearchToolsPlugin\SETO_OptionsPage::init();
+				}
+			}
+
 			if( file_exists( SETO_INCLUDES_PATH . "DashboardWidget.php" ) ){
 				require_once SETO_INCLUDES_PATH . 'DashboardWidget.php';
 

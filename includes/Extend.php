@@ -15,7 +15,7 @@ class SETO_Extend {
 	/**
 	 * Plugin settings.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @var array
 	 */
 	private $seto_settings = '';
@@ -23,7 +23,7 @@ class SETO_Extend {
 	/**
 	 * Current setting option name.
 	 *
-	 * @since 2.0
+	 * @since 1.0.0
 	 * @var string
 	 */
 	private $option_key_name = 'seto_options';
@@ -31,7 +31,7 @@ class SETO_Extend {
 	/**
 	 * Class instance.
 	 *
-	 * @since 2.0
+	 * @since 1.0.0
 	 * @var SETO_Extend
 	 */
 	public static $instance = false;
@@ -39,7 +39,7 @@ class SETO_Extend {
 	/**
 	 * Flag to include mime type query.
 	 *
-	 * @since 2.1
+	 * @since 1.0.0
 	 * @var boolean
 	 */
 	private $include_mime_type = false;
@@ -47,7 +47,7 @@ class SETO_Extend {
 	/**
 	 * Default Constructor
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function __construct() {
 		// Load settings.
@@ -83,7 +83,7 @@ class SETO_Extend {
 	/**
 	 * Get Default options.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function default_options() {
 		$settings = array(
@@ -101,6 +101,7 @@ class SETO_Extend {
 			'order'          => 'DESC',
 			'exact_match'    => 'no',
 			'media_types'    => array(),
+			'highlight_background'    => '',
 		);
 		return $settings;
 	}
@@ -108,7 +109,7 @@ class SETO_Extend {
 	/**
 	 * Get plugin options.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function seto_options() {
 
@@ -124,7 +125,7 @@ class SETO_Extend {
 	/**
 	 * Add post type in where clause of wp query.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param object $query wp_query object.
 	 */
 	public function pre_get_posts( $query ) {
@@ -197,7 +198,7 @@ class SETO_Extend {
 	/**
 	 * Core function return the custom query.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @global Object $wpdb WordPress db object.
 	 * @param string $search Search query.
 	 * @param object $wp_query WP query.
@@ -218,7 +219,7 @@ class SETO_Extend {
 		/**
 		 * Filter the term relation type OR/AND.
 		 *
-		 * @since 1.2
+		 * @since 1.0.0
 		 * @param NULL
 		 */
 		$terms_relation_type = apply_filters( 'seto_terms_relation_type', null );
@@ -319,7 +320,7 @@ class SETO_Extend {
 		/**
 		 * Filter search query return by plugin.
 		 *
-		 * @since 1.0.1
+		 * @since 1.0.0
 		 * @param string $search SQL query.
 		 * @param object $wp_query global wp_query object.
 		 */
@@ -329,7 +330,7 @@ class SETO_Extend {
 	/**
 	 * Join tables.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @global Object $wpdb WPDB object.
 	 * @param string $join query for join.
 	 * @return string $join query for join.
@@ -360,7 +361,7 @@ class SETO_Extend {
 	/**
 	 * Request distinct results.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @param string $distinct DISTINCT Keyword.
 	 * @return string $distinct
 	 */
@@ -372,7 +373,7 @@ class SETO_Extend {
 	/**
 	 * Add mime type SQL to search query.
 	 *
-	 * @since 2.1
+	 * @since 1.0.0
 	 * @global Object $wpdb WPDB object.
 	 * @param string $search Search SQL.
 	 * @return string Search SQL with mime type query.
@@ -418,7 +419,7 @@ class SETO_Extend {
 	/**
 	 * Check if it is bbPress page.
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 * @return boolean TRUE if bbPress search else FALSE.
 	 */
 	public function is_bbpress_search() {
@@ -432,7 +433,7 @@ class SETO_Extend {
 	/**
 	 * Check if the query for the search and should be altered.
 	 *
-	 * @since 2.0.2
+	 * @since 1.0.0
 	 * @param WP_Query $query WP_Query object.
 	 * @return boolean true if query satisfied search conditions else false.
 	 */
