@@ -30,7 +30,7 @@
 .seto-btn {
     display: inline-flex;
     padding: 5px 10px;
-    border: 1px solid var(--seto-dark);
+    border: 1px solid var(--seto-primary);
     margin: 0 5px;
     text-decoration: none;
     letter-spacing: 0.025rem;
@@ -38,10 +38,20 @@
     font-size: 14px;
     font-weight: bold;
 }
-.seto-btn.seto-btn-primary {
-    border-color: var(--seto-secondary);
+.seto-btn:hover {
+    border-color: var(--seto-tertiary);
     background: var(--seto-primary);
     color: var(--seto-tertiary);
+}
+.seto-btn.seto-btn-primary {
+    border-color: var(--seto-primary);
+    background: var(--seto-secondary);
+    color: var(--seto-tertiary);
+}
+.seto-btn.seto-btn-primary:hover {
+    border-color: var(--seto-secondary);
+    background: var(--seto-primary);
+    color: var(--seto-white);
 }
 
 

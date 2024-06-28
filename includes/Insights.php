@@ -140,9 +140,9 @@ class SETO_Insights
 						<a href="?page=search-tools-insights&tab=guests" class="seto-header-navitem <?php if($tab==='guests'):?>is-active<?php endif; ?>"><?php esc_html_e("Guests", "search-tools"); ?></a>
 					</div>
 						
-					<div style="display:none;">
-						<a class="seto-btn" href="#" target="_blank"><?php esc_html_e("support", "search-tools"); ?></a>
-						<a class="seto-btn seto-btn-primary" href="#" target="_blank"><?php esc_html_e("upgrade to pro", "search-tools"); ?></a>
+					<div>
+						<a class="seto-btn" href="https://wordpress.org/support/plugin/search-tools/" target="_blank"><?php esc_html_e("support", "search-tools"); ?></a>
+						<a class="seto-btn seto-btn-primary" href="https://www.wpsearchtools.com/pro-features/" target="_blank"><?php esc_html_e("upgrade to pro", "search-tools"); ?></a>
 					</div>
 				</div>
 								

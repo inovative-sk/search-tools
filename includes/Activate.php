@@ -94,6 +94,8 @@ class SETO_Activate
         add_option( 'seto_db_version', $seto_db_version, '', false );
 
         add_option('seto_plugin_activation_date', current_time('mysql', false), '', false);
+
+        add_option( 'seto_free_options["field_highlight_enable"]', 'enable', '', false );
     }
 
 }

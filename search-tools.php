@@ -2,8 +2,8 @@
 /*
 * Plugin Name: Search Tools
 * Plugin URI: https://www.wpsearchtools.com/
-* Description: Brings a bunch of useful tools to boost the search functionality. Extends default search engine and shows statistics what users look for.
-* Version: 1.1.1
+* Description: Highlights search term (customizable colours), collects data (privacy friendly analytics), extends default engine. New 2024 WP plugin.
+* Version: 1.2.0
 * Author: Peter Stehlik
 * Author URI: https://www.toptal.com/resume/peter-stehlik
 * Text Domain: search-tools
@@ -127,7 +127,7 @@ if ( ! class_exists( 'SETO_SearchTools' ) ) {
 		 * 
 		 * @var string
 		 */
-		public $version = '1.1.1';
+		public $version = '1.2.0';
 
 		/**
 		 * A dummy constructor to ensure SearchTools is only setup once.
@@ -157,7 +157,7 @@ if ( ! class_exists( 'SETO_SearchTools' ) ) {
 			}
 
 			if( $GLOBALS['hook_suffix'] === "search-tools_page_search-tools-insights" ){
-				wp_enqueue_style("search-tools-insights", SETO_ASSETS_URL . "css/tools-insights.css", false, "1.0.1", "all");
+				wp_enqueue_style("search-tools-insights", SETO_ASSETS_URL . "css/tools-insights.css", false, "1.0.2", "all");
 				wp_enqueue_script("search-tools-apexcharts", SETO_ASSETS_URL . "external/apexcharts/apexcharts.min.js", [], "3.48.0", ["in_footer" => true]);
 				wp_enqueue_script("search-tools-insights", SETO_ASSETS_URL . "js/tools-insights.js", [], "1.0.1", ["defer" => true, "in_footer" => true]);
 			}
