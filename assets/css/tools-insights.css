@@ -101,8 +101,14 @@
     }
 }
 
+.seto-insights-heading-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
 .seto-insights-heading {
-    padding: 1.5rem;
     border-bottom: 1px solid var(--seto-light);
     margin: 0;
     font-weight: bold;

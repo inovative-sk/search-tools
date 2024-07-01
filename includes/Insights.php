@@ -491,8 +491,16 @@ class SETO_Insights
 			$items .= $this->statisticsItem($key, $result, $last_key_today);			
 		}
 
+		$path = plugin_dir_url( __DIR__ );
+
 		$html = "
-			<h3 class='seto-insights-heading'>$label:</h3>
+			<div class='seto-insights-heading-wrap'>
+				<h3 class='seto-insights-heading'>$label:</h3>
+
+				<a class='js-seto-export-csv' href='#'>
+					<img src='$path/assets/img/csv-file.svg' width='30' height='30' alt='" . esc_html__('Download .csv', 'search-tools') . "' title='" . esc_html__('Download .csv', 'search-tools') . "' />
+				</a>
+			</div>
 
 			<table class='seto-table seto-insights-table'>
 				<thead>

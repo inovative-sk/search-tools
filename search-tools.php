@@ -157,7 +157,7 @@ if ( ! class_exists( 'SETO_SearchTools' ) ) {
 			}
 
 			if( $GLOBALS['hook_suffix'] === "search-tools_page_search-tools-insights" ){
-				wp_enqueue_style("search-tools-insights", SETO_ASSETS_URL . "css/tools-insights.css", false, "1.0.2", "all");
+				wp_enqueue_style("search-tools-insights", SETO_ASSETS_URL . "css/tools-insights.css", false, "1.0.5", "all");
 				wp_enqueue_script("search-tools-apexcharts", SETO_ASSETS_URL . "external/apexcharts/apexcharts.min.js", [], "3.48.0", ["in_footer" => true]);
 				wp_enqueue_script("search-tools-insights", SETO_ASSETS_URL . "js/tools-insights.js", [], "1.0.1", ["defer" => true, "in_footer" => true]);
 			}
@@ -228,6 +228,14 @@ if ( ! class_exists( 'SETO_SearchTools' ) ) {
 
 				if( is_admin() ){
 					\SearchToolsPlugin\SETO_ExtendOptions::init();
+				}
+			}
+
+			if( file_exists( SETO_INCLUDES_PATH . "ExportData.php" ) ){
+				require_once SETO_INCLUDES_PATH . 'ExportData.php';
+
+				if( is_admin() ){
+					\SearchToolsPlugin\SETO_ExportData::init();
 				}
 			}
 		}
