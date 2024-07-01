@@ -10,7 +10,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 == Description ==
 
-Highlights search term (customizable colours), collects search analytics (privacy friendly), extends default search engine. WP Search Tools, brand new 2024 WordPress plugin, is a collection of useful improvements to the site search functionality.
+Highlights search term (customizable colours), collects search analytics (privacy friendly), extends default search engine or disable search completely. WP Search Tools, brand new 2024 WordPress plugin, is a collection of useful improvements to the site search functionality if used or not.
 
 = Search Analytics =
 
@@ -39,6 +39,10 @@ Free version of the plugin extends the default search engine. It allows searchin
 
 The results are ordered by relevance not post date. The settings can be customized to fit exact needs. It is possible to choose which post types, meta data or taxonomies should be included in the search.
 
+= Disable Search =
+
+The plugin prevents WordPress from allowing and handling any search requests from the front-end of the site. If search is not used on the website, it is useful to disable it completely. The seach form is hidden, if called with a standard `get_search_form()` function, the search requests redirect to a 404 error page. The setting is customizable.
+
 = Key Features =
 
 * collects search terms what people look for
@@ -50,6 +54,7 @@ The results are ordered by relevance not post date. The settings can be customiz
 * extends default search engine with post types, meta data, taxonomies, meta data
 * orders search results by relevance
 * settings are customizable
+* disable search
 
 == Links ==
 

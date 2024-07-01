@@ -78,6 +78,12 @@ class SETO_OptionsPage
 
                 // output save settings button
                 submit_button( 'Save Settings' );
+
+                // output setting sections and their fields
+                do_settings_sections( 'disable_search' );
+
+                // output save settings button
+                submit_button( 'Save Settings' );
                 ?>
             </form>
 		</div>
@@ -101,6 +107,13 @@ class SETO_OptionsPage
             __( 'Highlight Searched Term', 'search-tools' ),
             [$this, 'section_highlight_background_callback'],
             'highlight_background'
+        );
+
+        add_settings_section(
+            'section_disable_search',
+            __( 'Disable Search', 'search-tools' ),
+            [$this, 'section_disable_search_callback'],
+            'disable_search'
         );
 
         // register a new field in a 'highlight' section
@@ -142,11 +155,31 @@ class SETO_OptionsPage
                 'custom_data'    => 'custom',
             )
         );
+
+        // register a new field in a 'disable' section
+        add_settings_field(
+            'field_disable_search',
+            __( 'Disable Search', 'search-tools' ),
+            [$this, 'field_disable_search_cb'],
+            'disable_search',
+            'section_disable_search',
+            array(
+                'label_for'         => 'field_disable_search',
+                'class'             => 'st_row',
+                'custom_data'    => 'custom',
+            )
+        );
     }
 
     public function section_highlight_background_callback( $args ) {
         ?>
         <p id="<?php echo esc_attr( $args['id'] ); ?>"><?php esc_html_e( 'Manage the colours of the highlighted term in the search results.', 'search-tools' ); ?></p>
+        <?php
+    }
+
+    public function section_disable_search_callback( $args ) {
+        ?>
+        <p id="<?php echo esc_attr( $args['id'] ); ?>"><?php esc_html_e( 'Remove search functionality completely?', 'search-tools' ); ?></p>
         <?php
     }
 
@@ -200,6 +233,19 @@ class SETO_OptionsPage
                     });
                 })( jQuery );
             </script>
+        <?php 
+    }
+
+    public function field_disable_search_cb( $args ) {
+        $options = get_option( 'seto_free_options' );
+        ?>
+            <input
+                type="checkbox"
+                name="seto_free_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
+                id="<?php echo esc_attr( $args['label_for'] ); ?>"
+                value="disable"
+                <?php echo isset( $options['field_disable_search'] ) ? ( checked(esc_attr($options['field_disable_search']), 'disable', false) ) : (''); ?>
+            >
         <?php 
     }
 

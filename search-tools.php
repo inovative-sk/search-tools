@@ -188,6 +188,16 @@ if ( ! class_exists( 'SETO_SearchTools' ) ) {
 				
 				\SearchToolsPlugin\SETO_Highlight::init();
 			}
+
+			if( file_exists( SETO_INCLUDES_PATH . "Disable.php" ) ){
+				require_once SETO_INCLUDES_PATH . 'Disable.php';
+				
+				$options = get_option( 'seto_free_options' );
+
+				if( isset( $options["field_disable_search"] ) && $options["field_disable_search"] === 'disable' ){
+					add_action( 'plugins_loaded', [ '\SearchToolsPlugin\SETO_Disable', 'disable_search' ] );
+				}
+			}
 			
 			if( file_exists( SETO_INCLUDES_PATH . "OptionsPage.php" ) ){
 				require_once SETO_INCLUDES_PATH . 'OptionsPage.php';
