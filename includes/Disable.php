@@ -24,7 +24,7 @@ class SETO_Disable
 
 	public function __wakeup() {
 		/* translators: %s: Name of plugin class. */
-		throw new Error( sprintf( __( '%s cannot be unserialized.', 'search-tools' ), __CLASS__ ) );
+		throw new \Error( sprintf( __( '%s cannot be unserialized.', 'search-tools' ), __CLASS__ ) );
 	}
 
     public static function disable_search() {

@@ -238,6 +238,14 @@ if ( ! class_exists( 'SETO_SearchTools' ) ) {
 					\SearchToolsPlugin\SETO_ExportData::init();
 				}
 			}
+
+			if( file_exists( SETO_INCLUDES_PATH . "AddReview.php" ) ){
+				require_once SETO_INCLUDES_PATH . 'AddReview.php';
+
+				if( is_admin() ){
+					\SearchToolsPlugin\SETO_AddReview::init();
+				}
+			}
 		}
 
 	} // class SETO_SearchTools
