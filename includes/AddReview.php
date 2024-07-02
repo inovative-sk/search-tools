@@ -43,7 +43,7 @@ class SETO_AddReview
 
         $disabled = get_option("seto_disable_reviews") ?? false;
 
-        if ( $days_active >= 3 && in_array( 'administrator', (array) $user->roles ) && !$disabled ) {
+        if ( $days_active >= 30 && in_array( 'administrator', (array) $user->roles ) && !$disabled ) {
             $show = true;
         }
 
