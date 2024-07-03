@@ -77,13 +77,13 @@ class SETO_OptionsPage
                 do_settings_sections( 'highlight_background' );
 
                 // output save settings button
-                submit_button( 'Save Settings' );
+                submit_button( __('Save Changes', 'search-tools') );
 
                 // output setting sections and their fields
                 do_settings_sections( 'disable_search' );
 
                 // output save settings button
-                submit_button( 'Save Settings' );
+                submit_button( __('Save Changes', 'search-tools') );
                 ?>
             </form>
 		</div>

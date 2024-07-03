@@ -31,6 +31,13 @@ class SETO_AddReview
         add_action( 'wp_ajax_disable_review_notice', [ $this, 'disable_review_notice'], 10, 0 );
 	}
 
+    /**
+     * Validate the show notice request
+     *
+     * @since   1.2.0
+     *
+     * @return  void
+     */
     private function check_if_show_notice() {
         $show = false;
         $user = wp_get_current_user();
@@ -50,6 +57,13 @@ class SETO_AddReview
         return $show;
     }
 
+    /**
+     * Show Admin Notice
+     *
+     * @since   1.2.0
+     *
+     * @return  void
+     */
     public function ask_for_review_admin_notice() {
         $check = $this->check_if_show_notice();
 
@@ -75,6 +89,13 @@ class SETO_AddReview
         echo $notice = wp_kses($notice_html, 'post');
     }
 
+    /**
+     * Handle admin AJAX request
+     *
+     * @since   1.2.0
+     *
+     * @return  void
+     */
     public function disable_review_notice() {
 		$disable = wp_unslash( $_POST['disable'] );
 

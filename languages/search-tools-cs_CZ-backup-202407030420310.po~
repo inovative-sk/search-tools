@@ -1,19 +1,19 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Search Tools\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-02 10:50+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: \n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"PO-Revision-Date: 2024-07-03 04:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: Čeština\n"
+"Language: cs_CZ\n"
+"Plural-Forms: nplurals=3; plural=( n == 1 ) ? 0 : ( n >= 2 && n <= 4 ) ? 1 : "
+"2;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.6; wp-6.2\n"
+"X-Loco-Version: 2.6.10; wp-6.2\n"
 "X-Domain: search-tools"
 
 #. %s: Name of plugin class.
@@ -21,290 +21,347 @@ msgstr ""
 #, php-format
 msgid "%s cannot be unserialized."
 msgstr ""
+"%s nelze zrušit serializaci.\n"
 
 #: templates/dashboard-widget.php:12
 msgid "7 DAYS"
 msgstr ""
+"7 dní\n"
 
 #: includes/Insights.php:138
 msgid "All Users"
 msgstr ""
+"Všichni uživatelé\n"
 
 #: includes/ExtendOptions.php:446
 msgid "AND"
-msgstr ""
+msgstr "A"
 
 #: includes/ExtendOptions.php:510
 msgid "Ascending"
 msgstr ""
+"Vzestupně\n"
 
 #: includes/ExtendOptions.php:166
 msgid "Author Setting"
 msgstr ""
+"Nastavení autora\n"
 
 #: includes/OptionsPage.php:135
 msgid "Background Colour"
 msgstr ""
+"Barva pozadí\n"
 
 #: includes/ExtendOptions.php:469
 msgid ""
 "Contents will not appear in search results older than this date OR leave "
 "blank to disable this feature."
 msgstr ""
+"Obsah se nezobrazí ve výsledcích vyhledávání starších než toto datum, NEBO "
+"ponechejte prázdné, chcete-li tuto funkci deaktivovat.\n"
 
 #: templates/tools-chart.php:14
 msgid "Count"
-msgstr ""
+msgstr "Počet"
 
 #: includes/ExtendOptions.php:494
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 #: includes/ExtendOptions.php:266
 msgid "Date seems to be in invalid format!"
 msgstr ""
+"Datum se zdá být v neplatném formátu!\n"
 
 #: includes/ExtendOptions.php:509
 msgid "Descending"
 msgstr ""
+"Sestupně\n"
 
 #: includes/OptionsPage.php:114 includes/OptionsPage.php:162
 msgid "Disable Search"
 msgstr ""
+"Zakázat vyhledávání\n"
 
 #: includes/Insights.php:501
 msgid "Download .csv"
 msgstr ""
+"Stáhnout .csv\n"
 
 #: includes/OptionsPage.php:122
 msgid "Enable Highlight"
 msgstr ""
+"Povolit zvýraznění\n"
 
 #: includes/ExtendOptions.php:115 includes/ExtendOptions.php:116
 msgid "Extend Search"
 msgstr ""
+"Rozšířit vyhledávání\n"
 
 #: includes/ExtendOptions.php:130
 msgid "Extend WordPress Search"
 msgstr ""
+"Rozšířit vyhledávání WordPress\n"
 
 #: includes/ExtendOptions.php:163
 msgid "General Search Setting"
 msgstr ""
+"Obecné nastavení vyhledávání\n"
 
 #: includes/AddReview.php:74
 msgid "Good news! Happy to see that Search Tools plugin works for you."
 msgstr ""
+"Dobré zprávy! Jsme rádi, že vám plugin Search Tools funguje.\n"
 
 #: includes/Insights.php:140
 msgid "Guests"
 msgstr ""
+"Nepřihlášen\n"
 
 #: includes/OptionsPage.php:107
 msgid "Highlight Searched Term"
 msgstr ""
+"Zvýrazněte hledaný výraz\n"
 
 #. Description of the plugin
 msgid ""
 "Highlights search term (customizable colours), collects data (privacy "
 "friendly analytics), extends default engine. New 2024 WP plugin."
 msgstr ""
+"Zvýrazňuje hledaný výraz (přizpůsobitelné barvy), shromažďuje data "
+"(analytika přátelská k soukromí), rozšiřuje výchozí vyhledávaní. Nový 2024 "
+"WordPress plugin.\n"
 
 #. Author URI of the plugin
 msgid "https://www.toptal.com/resume/peter-stehlik"
-msgstr ""
+msgstr "https://www.toptal.com/resume/peter-stehlik"
 
 #. URI of the plugin
 msgid "https://www.wpsearchtools.com/"
-msgstr ""
+msgstr "https://www.wpsearchtools.com/"
 
 #: includes/ExtendOptions.php:379
 msgid ""
 "If checked then it will display those results whose Author \"Display name\" "
 "match the search terms."
 msgstr ""
+"Pokud je zaškrtnuto, zobrazí se výsledky, jejichž „Display Name“ autora "
+"odpovídá hledaným výrazům.\n"
 
 #: includes/ExtendOptions.php:427
 msgid ""
 "If you are selecting Media post type then save the settings once to enable "
 "more media settings."
 msgstr ""
+"Pokud vyberete Typ příspěvku média, uložte nastavení jednou, abyste povolili "
+"další nastavení médií.\n"
 
 #: includes/Insights.php:70 includes/Insights.php:71
 msgid "Insights"
 msgstr ""
+"Analytika\n"
 
 #: includes/Insights.php:539
 msgid "Last 30 days"
 msgstr ""
+"Posledních 30 dnů\n"
 
 #: includes/Insights.php:538
 msgid "Last 7 days"
 msgstr ""
+"Posledních 7 dnů\n"
 
 #: includes/ExtendOptions.php:495
 msgid "Last Modified Date"
 msgstr ""
+"Datum poslední změny\n"
 
 #: includes/Insights.php:139
 msgid "Logged in"
 msgstr ""
+"Přihlášen\n"
 
 #: includes/OptionsPage.php:176
 msgid "Manage the colours of the highlighted term in the search results."
 msgstr ""
+"Spravujte barvy zvýrazněného výrazu ve výsledcích vyhledávání.\n"
 
 #: includes/ExtendOptions.php:170
 msgid "Match the search term exactly"
 msgstr ""
+"Shoduje se přesně s hledaným výrazem\n"
 
 #: includes/ExtendOptions.php:158
 msgid "Media Search Settings"
 msgstr ""
+"Nastavení vyhledávání médií\n"
 
 #: includes/ExtendOptions.php:174
 msgid "Media Types"
 msgstr ""
+"Typy médií\n"
 
 #: includes/ExtendOptions.php:160
 msgid "Miscellaneous Settings"
 msgstr ""
+"Různá nastavení\n"
 
 #: includes/ExtendOptions.php:526
 msgid "No"
-msgstr ""
+msgstr "Ne"
 
 #: includes/ExtendOptions.php:315
 msgid "No meta key found!"
 msgstr ""
+"Nebyl nalezen žádný meta klíč!\n"
 
 #: includes/ExtendOptions.php:433
 msgid "No public post type found!"
 msgstr ""
+"Nebyl nalezen žádný “post type”!\n"
 
 #: includes/ExtendOptions.php:364
 msgid "No public taxonomy found!"
 msgstr ""
+"Nebyla nalezena žádná “taxonomy”!\n"
 
 #: templates/tools-chart.php:21
 msgid ""
 "No searches collected yet. Do one by yourself or wait for visitors data."
 msgstr ""
+"Dosud nebyla shromážděna žádná vyhledávání. Udělejte to sami nebo počkejte "
+"na data návštěvníků.\n"
 
 #: templates/dashboard-widget.php:34 templates/dashboard-widget.php:56
 #: templates/dashboard-widget.php:78
 msgid "No searches for this period yet."
 msgstr ""
+"Pro toto období zatím žádná vyhledávání.\n"
 
 #: includes/ExtendOptions.php:499
 msgid "Number of Comments"
 msgstr ""
+"Počet komentářů\n"
 
 #: includes/ExtendOptions.php:481
 msgid ""
 "Number of posts to display on search result page OR leave blank for default "
 "value."
 msgstr ""
+"Počet příspěvků k zobrazení na stránce s výsledky vyhledávání NEBO "
+"ponechejte prázdné pro výchozí hodnotu.\n"
 
 #: includes/ExtendOptions.php:447
 msgid "OR"
-msgstr ""
+msgstr "NEBO"
 
 #: includes/ExtendOptions.php:511
 msgid ""
 "Order the sorted search items in Descending or Ascending. Default is "
 "Descending."
 msgstr ""
+"Seřazené položky hledání seřaďte Sestupně nebo Vzestupně. Výchozí hodnota je "
+"Sestupně.\n"
 
 #: templates/dashboard-widget.php:13
 msgid "OVERALL"
 msgstr ""
+"Celkově\n"
 
 #: includes/Insights.php:541
 msgid "Overall"
 msgstr ""
+"Celkově\n"
 
 #. Author of the plugin
 msgid "Peter Stehlik"
-msgstr ""
+msgstr "Peter Stehlik"
 
 #: includes/ExtendOptions.php:497
 msgid "Post Slug"
-msgstr ""
+msgstr "Post Slug"
 
 #: includes/ExtendOptions.php:496
 msgid "Post Title"
-msgstr ""
+msgstr "Název příspěvku"
 
 #: includes/ExtendOptions.php:498
 msgid "Post Type"
-msgstr ""
+msgstr "Typ příspěvku"
 
 #: includes/ExtendOptions.php:172
 msgid "Posts per page"
-msgstr ""
+msgstr "Příspěvky na stránku"
 
 #: includes/Insights.php:509 templates/dashboard-widget.php:23
 #: templates/dashboard-widget.php:45 templates/dashboard-widget.php:67
 msgid "query"
-msgstr ""
+msgstr "dotaz"
 
 #: includes/ExtendOptions.php:500
 msgid "Random"
-msgstr ""
+msgstr "Náhodný"
 
 #: includes/ExtendOptions.php:493
 msgid "Relevance"
-msgstr ""
+msgstr "Relevantnost"
 
 #: includes/OptionsPage.php:182
 msgid "Remove search functionality completely?"
-msgstr ""
+msgstr "Odebrat funkci vyhledávání úplně?"
 
 #: includes/ExtendOptions.php:139
 msgid "Reset to WP Default"
-msgstr ""
+msgstr "Obnovit výchozí nastavení WP"
 
 #: includes/Insights.php:511
 msgid "results"
-msgstr ""
+msgstr "výsledkov"
 
 #: includes/ExtendOptions.php:137
 msgid "Save Changes"
 msgstr ""
+"Uložit změny\n"
 
 #: includes/ExtendOptions.php:378
 msgid "Search in Author display name"
 msgstr ""
+"Hledat v “Display Name” autora\n"
 
 #: includes/ExtendOptions.php:286
 msgid "Search in Content"
 msgstr ""
+"Hledat v obsahu\n"
 
 #: includes/ExtendOptions.php:290
 msgid "Search in Excerpt"
 msgstr ""
+"Hledej v úryvku\n"
 
 #: includes/ExtendOptions.php:282
 msgid "Search in Title"
 msgstr ""
+"Hledat v názvu\n"
 
 #: includes/DashboardWidget.php:69 includes/Insights.php:135
 msgid "Search Insights"
 msgstr ""
+"Statistiky vyhledávání\n"
 
 #: includes/ExtendOptions.php:173
 msgid "Search Results Order"
 msgstr ""
+"Pořadí výsledků vyhledávání\n"
 
 #. Name of the plugin
 #: includes/OptionsPage.php:40 includes/OptionsPage.php:41
 msgid "Search Tools"
-msgstr ""
+msgstr "Search Tools"
 
 #: includes/OptionsPage.php:69
 msgid "Search Tools Options"
 msgstr ""
+"Možnosti Search Tools\n"
 
 #. %s is the number of minimum WordPress version that Search Tools requires
 #: search-tools.php:67
@@ -313,6 +370,8 @@ msgid ""
 "Search Tools plugin requires WordPress version %s or newer. Please update "
 "your [link]WordPress[/link] installation."
 msgstr ""
+"Plugin Search Tools vyžaduje verzi WordPress%s nebo novější. Aktualizujte "
+"prosím svůj [link]WordPress[/link].\n"
 
 #. %s is the number of minimum PHP version that Search Tools requires
 #: search-tools.php:92
@@ -321,61 +380,75 @@ msgid ""
 "Search Tools requires PHP version %s or newer. You are running version "
 "[version]. Please upgrade your site."
 msgstr ""
+"Search Tools vyžaduje verzi PHP%s nebo novější. Používáte verzi [verze]. "
+"Upgradujte prosím své stránky.\n"
 
 #: includes/Insights.php:510 templates/dashboard-widget.php:24
 #: templates/dashboard-widget.php:46 templates/dashboard-widget.php:68
 msgid "searched"
-msgstr ""
+msgstr "hledán"
 
 #: templates/tools-chart.php:9
 msgid "SEARCHES LAST 90 DAYS"
 msgstr ""
+"VYHLEDÁVÁNÍ POSLEDNÍCH 90 DNÍ\n"
 
 #: templates/dashboard-widget.php:85
 msgid "See more detailed overviews"
 msgstr ""
+"Podívejte se na podrobnější přehledy\n"
 
 #: includes/ExtendOptions.php:256
 msgid "Select at least one post type!"
 msgstr ""
+"Vyberte alespoň jeden typ příspěvku!\n"
 
 #: includes/ExtendOptions.php:261
 msgid "Select at least one setting to search!"
 msgstr ""
+"Vyberte alespoň jedno nastavení pro vyhledávání!\n"
 
 #: includes/ExtendOptions.php:171
 msgid "Select date to exclude older results"
 msgstr ""
+"Vyberte datum, chcete-li vyloučit starší výsledky\n"
 
 #: includes/ExtendOptions.php:156
 msgid "Select Fields to include in WordPress default Search"
 msgstr ""
+"Vyberte Pole, která chcete zahrnout do výchozího vyhledávání WordPress\n"
 
 #: includes/ExtendOptions.php:164
 msgid "Select Meta Key Names"
 msgstr ""
+"Vyberte Meta Key Names\n"
 
 #: includes/ExtendOptions.php:167
 msgid "Select Post Types"
 msgstr ""
+"Vyberte “Post Types”\n"
 
 #: includes/ExtendOptions.php:165
 msgid "Select Taxonomies"
 msgstr ""
+"Vyberte “Taxonomy”\n"
 
 #: includes/ExtendOptions.php:560
 msgid ""
 "Select the media types to limit the results by type. Leave blank to search "
 "all media types."
 msgstr ""
+"Chcete-li omezit výsledky podle typu, vyberte typy médií. Chcete-li "
+"vyhledávat všechny typy médií, ponechte prázdné.\n"
 
 #: includes/ExtendOptions.php:251
 msgid "Settings has been changed to WordPress default search setting."
 msgstr ""
+"Nastavení bylo změněno na výchozí nastavení vyhledávání WordPress.\n"
 
 #: includes/OptionsPage.php:62
 msgid "Settings Saved"
-msgstr ""
+msgstr "Nastavení uloženo"
 
 #. %1$s: anchor tag opening, %2$s: anchor tag closed.
 #: includes/ExtendOptions.php:505
@@ -384,22 +457,25 @@ msgid ""
 "Sort search results based on metadata of items. The default value is "
 "%1$sRelevance%2$s."
 msgstr ""
+"Seřaďte výsledky vyhledávání na základě metadat položek. Výchozí hodnota "
+"je%1$s Relevantnost%2$s .\n"
 
 #: includes/Insights.php:144
 msgid "support"
-msgstr ""
+msgstr "Podpora"
 
 #: includes/ExtendOptions.php:168
 msgid "Terms Relation Type"
-msgstr ""
+msgstr "Typ vztahu dotazu"
 
 #: includes/OptionsPage.php:148
 msgid "Text Colour"
 msgstr ""
+"Barva textu\n"
 
 #: includes/AddReview.php:77
 msgid "The plugin doesn't deserve it"
-msgstr ""
+msgstr "Plugin si to nezaslouží"
 
 #: includes/ExtendOptions.php:452
 msgid ""
@@ -408,18 +484,21 @@ msgid ""
 "into terms instead the whole sentence is matched thus this option has no "
 "meaning."
 msgstr ""
+"Tato možnost je deaktivována, protože jste zvolili „Přesná shoda s hledaným "
+"výrazem“. Při použití možnosti přesné shody se věta nerozdělí na výrazy, "
+"místo toho se spojí celá věta, takže tato možnost nemá žádný význam."
 
 #: includes/Insights.php:540
 msgid "This year"
-msgstr ""
+msgstr "Tento rok"
 
 #: templates/dashboard-widget.php:11
 msgid "TODAY"
-msgstr ""
+msgstr "DNES"
 
 #: includes/Insights.php:537
 msgid "Today"
-msgstr ""
+msgstr "Dnes"
 
 #: includes/ExtendOptions.php:454
 msgid ""
@@ -427,10 +506,12 @@ msgid ""
 "query\" then define the relation between \"my\" and \"query\". The default "
 "value is AND."
 msgstr ""
+"Typ vztahu dotazu mezi hledanými výrazy. Výchozí hodnota je A (AND).\n"
 
 #: includes/Insights.php:145
 msgid "upgrade to pro"
 msgstr ""
+"Upgradujte na Pro\n"
 
 #: includes/ExtendOptions.php:529
 msgid ""
@@ -439,15 +520,19 @@ msgid ""
 "select Yes then it will display items only matching \"Word\". The default "
 "value is No."
 msgstr ""
+"Zda přesně nebo částečně odpovídat hledanému výrazu, např. Pokud někdo hledá "
+"&quot;Word&quot;, zobrazí položky odpovídající &quot;WordPress&quot; nebo "
+"&quot;Word&quot;, ale pokud zvolíte Ano, zobrazí se pouze položky "
+"odpovídající &quot;Word&quot;. Výchozí hodnota je Ne.\n"
 
 #: includes/AddReview.php:75
 msgid "Would you be so kind to rate the plugin in the wordpress.org?"
-msgstr ""
+msgstr "Byli byste tak laskav a ohodnotili plugin na wordpress.org?"
 
 #: includes/ExtendOptions.php:523
 msgid "Yes"
-msgstr ""
+msgstr "Ano"
 
 #: includes/AddReview.php:76
 msgid "Yes, of course"
-msgstr ""
+msgstr "Ano, samozřejmě"

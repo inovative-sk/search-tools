@@ -1,6 +1,6 @@
 === Search Tools ===
 Contributors: stehlik
-Tags: search, search insights, extend search, search analytics, highlight
+Tags: search insights, extend search, search analytics, highlight, export data
 Requires at least: 6.2
 Tested up to: 6.5
 Requires PHP: 7.2

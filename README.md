@@ -17,6 +17,10 @@ The search term is highlighted in the search results WordPress page. Eye catchin
 
 Free version of the plugin extends the default search engine. It allows searching in post types, taxonomies, authors and meta data. The results are ordered by relevance not post date. All these parts of the WordPress are not included in the basic search. You can customize the settings by yourself to fit your needs.
 
+## Disable Search
+
+The plugin prevents WordPress from allowing and handling any search requests from the front-end of the site. If search is not used on the website, it is useful to disable it completely. The seach form is hidden, if called with a standard `get_search_form()` function, the search requests redirect to a 404 error page. The setting is customizable.
+
 ## Key Features
 
 - collects search terms what people look for
@@ -27,6 +31,7 @@ Free version of the plugin extends the default search engine. It allows searchin
 - shows basic overview on the Dashboard
 - extends default search engine with post types, meta data, taxonomies, meta data
 - orders search results by relevance
+- disable search
 - settings are customizable
 
 ### Plugin Websites
