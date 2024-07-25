@@ -83,6 +83,8 @@ class SETO_Activate
      * Store information, e.g. 'date of activation'
      *
      * @since   1.0.0
+     * 
+     * @updated 1.3.0
      *
      * @return  void
      */
@@ -94,8 +96,12 @@ class SETO_Activate
         add_option( 'seto_db_version', $seto_db_version, '', false );
 
         add_option('seto_plugin_activation_date', current_time('mysql', false), '', false);
+ 
+        $serialized = 'a:3:{s:22:"field_highlight_enable";s:6:"enable";s:26:"field_highlight_background";s:7:"#000000";s:22:"field_highlight_colour";s:7:"#ffffff";}';
 
-        add_option( 'seto_free_options["field_highlight_enable"]', 'enable', '', false );
+        add_option( 'seto_free_options', unserialize($serialized), '', false );
+
+        // add_option( 'seto_free_options[field_highlight_enable]', 'enable', '', false );
     }
 
 }

@@ -1,12 +1,14 @@
 === Search Tools ===
 Contributors: stehlik
-Tags: search insights, extend search, search analytics, highlight, export data
+Donate link: https://www.wpsearchtools.com/pricing/
+Tags: analytics, highlight, advanced, export, search
 Requires at least: 6.2
-Tested up to: 6.5
+Tested up to: 6.6.1
 Requires PHP: 7.2
-Stable tag: 1.2.0
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
+The advanced search plugin shows analytics, what users look for, can export data, highlights searched term, extends default WordPress search engine.
 
 == Description ==
 

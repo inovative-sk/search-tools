@@ -3,7 +3,7 @@
 * Plugin Name: Search Tools
 * Plugin URI: https://www.wpsearchtools.com/
 * Description: Highlights search term (customizable colours), collects data (privacy friendly analytics), extends default engine. New 2024 WP plugin.
-* Version: 1.2.0
+* Version: 1.3.0
 * Author: Peter Stehlik
 * Author URI: https://www.toptal.com/resume/peter-stehlik
 * Text Domain: search-tools
@@ -127,7 +127,7 @@ if ( ! class_exists( 'SETO_SearchTools' ) ) {
 		 * 
 		 * @var string
 		 */
-		public $version = '1.2.0';
+		public $version = '1.3.0';
 
 		/**
 		 * A dummy constructor to ensure SearchTools is only setup once.
