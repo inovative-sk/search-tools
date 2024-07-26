@@ -1,14 +1,14 @@
-=== Search Tools ===
+=== Search Tools - Advanced Search Analytics, Highlight, Extend, Disable ===
 Contributors: stehlik
 Donate link: https://www.wpsearchtools.com/pricing/
 Tags: analytics, highlight, advanced, export, search
 Requires at least: 6.2
 Tested up to: 6.6.1
 Requires PHP: 7.2
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
-The advanced search plugin shows analytics, what users look for, can export data, highlights searched term, extends default WordPress search engine.
+The advanced search plugin shows analytics, what users look for, can export data, highlights search term, extends default WordPress search engine.
 
 == Description ==
 
@@ -31,7 +31,7 @@ The graph data can customized and exported either as an image (.svg or .png) or 
 
 = Highlight Search Term =
 
-In the search results page, the search term is highlighted with a smooth, eye-catching CSS animation. The highlight feature MUST BE ENABLED first in the admin option! It can be switched on and off.
+In the search results page, the search term is highlighted with a smooth, eye-catching CSS animation. The highlight feature is activated by default.
 
 User experience is enhanced and visual mark speeds up finding relevant information. Furthermore, highlight settings are customizable, both background colour and text colour can be set in the WordPress administration options page.
 
@@ -43,7 +43,7 @@ The results are ordered by relevance not post date. The settings can be customiz
 
 = Disable Search =
 
-The plugin prevents WordPress from allowing and handling any search requests from the front-end of the site. If search is not used on the website, it is useful to disable it completely. The seach form is hidden, if called with a standard `get_search_form()` function, the search requests redirect to a 404 error page. The setting is customizable.
+The plugin prevents WordPress from allowing and handling any search requests from the front-end of the site. If search is not used on the website, it is useful to disable it completely. The seach form is hidden, if called with a standard `get_search_form()` function, the search requests redirect to a 404 error page. The setting is customizable, you can turn it on/off.
 
 = Key Features =
 
@@ -57,6 +57,40 @@ The plugin prevents WordPress from allowing and handling any search requests fro
 * orders search results by relevance
 * settings are customizable
 * disable search
+
+== Installation ==
+
+= Automated Installation =
+
+Type 'highlight search term' (best position in the results) into the plugin search and scroll to find the Search Tools plugin. When installed and activated, search analytics and highlight search term functionalities are immediately working for you.
+
+= Manual Alternatives =
+
+Alternatively, upload (e.g. via [FileZilla ftp client](https://filezilla-project.org/)) the Search Tools plugin files manually to your server into the 'wp-content/plugins' folder.
+
+Or download the plugin in a .ZIP format and upload via the WordPress plugin management administration page: 'Plugins - Add New Plugin - Upload Plugin (button at the top)'. If you need additional help feel free [to contact the support](https://wordpress.org/support/plugin/search-tools/).
+
+== Frequently Asked Questions ==
+
+= There are many WordPress search plugins. Why should I choose the Search Tools? =
+
+You are right. There are many tiny plugins, each solving some limitation of the default WordPress search. But we group together these features into the one plugin and extend them with extra settings and possibilities.
+
+= How do I find a plugin in search when I want to install it? =
+
+Type 'highlight search term' (best position in the results) into the plugin search and scroll to find the Search Tools plugin.
+
+= Do I need to set anything after installation and activation? =
+
+Search 'analytics' and 'highlight' feature are enabled by default. If you want to extend the WordPress search engine, go to 'Search Tools - Extend Search'. If you wish to disable the search feature, check the setting in the 'Search Tools' options page.
+
+= Is there a PRO version of the plugin? =
+
+It is! Premium version offers features like 'Beautify Search URL', 'Search Term Validator', 'Promotions' and others. Check the [PRO features](https://www.wpsearchtools.com/pro-features/) website for more detailed information and pricing.
+
+= There is not many 'active installations' yet. Why? =
+
+Search Tools is a new plugin, uploaded to the wordpress.org plugin repository in April, 2024. It passed all the security and best practises tests. The use is secure and the plugin is lightweight. Feel free to try it and the feedback is very appreciated!
 
 == Links ==
 
@@ -72,3 +106,22 @@ The plugin prevents WordPress from allowing and handling any search requests fro
 4. Settings 
 5. How to Zoom the Graph
 6. Admin Menu Item
+
+== Upgrade Notice ==
+= 1.3.1 =
+Left and right padding added in the highlighted search term for a nicer look.
+
+= 1.3.0 =
+Highlight a searched term set by default.
+
+= 1.2.0 =
+New functionalities added: disable WordPress search & export analytics data to .CSV file. Plugin translated into Slovak and Czech languages.
+
+= 1.1.1 =
+Updated plugin descriptions.
+
+= 1.1.0 =
+New functionality added: highlight searched term - customizable colours, smooth CSS animation.
+
+= 1.0.1 =
+Updated readme.txt and plugin screenshots added.

@@ -81,6 +81,8 @@ class SETO_Highlight
                     background-size: 200% 100%;
                     background-position: right bottom;
                     transition: all .5s ease-out;
+                    padding-left: 4px;
+                    padding-right: 4px;
                 }
                 .seto-highlight.animate {
                     background-position: left bottom;

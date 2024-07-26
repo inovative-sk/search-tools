@@ -3,7 +3,7 @@
 * Plugin Name: Search Tools
 * Plugin URI: https://www.wpsearchtools.com/
 * Description: Highlights search term (customizable colours), collects data (privacy friendly analytics), extends default engine. New 2024 WP plugin.
-* Version: 1.3.0
+* Version: 1.3.1
 * Author: Peter Stehlik
 * Author URI: https://www.toptal.com/resume/peter-stehlik
 * Text Domain: search-tools
@@ -104,10 +104,39 @@ function seto_php_version_notice() {
 
 /**
  * Activate the plugin.
+ * 
+ * @since   1.0.0
+ * 
  */
 if( file_exists( SETO_INCLUDES_PATH . "/Activate.php" ) ){
 	require_once SETO_INCLUDES_PATH . '/Activate.php';
 	register_activation_hook( __FILE__, ['\SearchToolsPlugin\SETO_Activate', 'init'] );
+}
+
+/**
+ * Add plugin menu items.
+ * 
+ * @since   1.3.1
+ * 
+ */
+add_filter( 'plugin_action_links_search-tools/search-tools.php', 'seto_settings_link' );
+function seto_settings_link( $links ) {
+	// Build and escape the URL.
+	$settings_url = esc_url( add_query_arg(
+		'page',
+		'wp-search-tools',
+		get_admin_url() . 'admin.php'
+	) );
+	// Create the link.
+	$settings_link = "<a href='$settings_url'>" . __( 'Settings', 'search-tools' ) . '</a>';
+	$go_pro_link = "<a href='https://www.wpsearchtools.com/pro-features/' target='_blank'>" . __( 'Premium', 'search-tools' ) . '</a>';
+	// Adds the link to the end of the array.
+	array_push(
+		$links,
+		$settings_link,
+		$go_pro_link
+	);
+	return $links;
 }
 
 /**
@@ -127,7 +156,7 @@ if ( ! class_exists( 'SETO_SearchTools' ) ) {
 		 * 
 		 * @var string
 		 */
-		public $version = '1.3.0';
+		public $version = '1.3.1';
 
 		/**
 		 * A dummy constructor to ensure SearchTools is only setup once.
